@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trở thành cao thủ HTML & CSS</title>
+
+	<style type="text/css">
+		#thu_do{
+			color: red;
+		}
+        .bien{
+            font-size: 30px;
+            color: blue;
+        }
+        p{
+            color: pink;
+        }
+        div .box1{
+            color: red;
+        }
+        .box > .box2{
+            color: blueviolet;
+        }
+        h3 + h4 {
+            color: orangered;
+        }
+        h3 ~ h4 {
+            font-size: 50px;
+        }
+        p::first-letter {
+    color: red;
+    font-size: 20px;
+        p::first-line {
+      color: #15cf7f;
+      font-variant: small-caps;
+    }
+    h1::before {
+    content: "Xin chào, ";
+  }
+     /* visited link */
+  a:visited {
+    color: green;
+  }
+  a:link {
+    color: red;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: hotpink;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+  p:first-child {
+    color: blue;
+  } 
+  p:last-child {
+    color: blue;
+  } 
+  a[target="_blank"]{
+      background-color: yellow;
+    }
+	</style>
+</head>
+<body>
+	<ul>
+		<li id="thu_do">Hà nội</li>
+		<li class="bien">Hải Phong</li>
+		<li class="bien">Đà nẵng</li>
+		<li>Thành phố Hồ chí minh</li>
+        <p>hoc lap trinh that vui</p>
+	</ul>
+    <!-- bo chon ket hop -->
+     <div class="box">
+        <h2 class="box1">no luc se thanh cong</h2>
+        <h2 class="box2">that bai la me thanh cong</h2>
+     </div>
+     <h3>hoc vien cong nghe buu chinh vien thong</h3>
+     <h4>sinh vien ptit</h4>
+     <h5>hoc hoc nua hoc mai</h5>
+      <!-- Chữ "C" đầu tiên trong từ Chào sẽ được nhận css như trên  -->
+     <!-- với màu đỏ và kích cỡ chữ là 20px -->
+     <p>Chào mừng bạn đến với môn học</p>
+     <!-- Dòng đầu tiên sẽ được áp dụng CSS.  -->
+<!-- Bạn phải đặt nội dung dài hơn 1 dòng để thấy sự khác biệt -->
+
+<p>Some more text. And even more, and more, and more, and more,
+ and more, and more, and more, and more, and more, and more, and more, and more.</p>
+ <h1>Tôi là Đăng</h1>
+ <!-- Kết quả mới của thẻ h1: Xin chào, Tôi là Đăng -->
+ 
+<h2>CSS Links</h2>
+<p><b><a href="https://vnua.edu.vn" target="_blank">This is a link</a></b></p>
+ <!-- Thẻ p đầu tiên này sẽ được thay đổi màu xanh -->
+ <p>Học lập trình dễ cực</p> 
+ <p>Học lập trình tại Zent</p>
+ <p>Học lập trình dễ cực</p> 
+ <p>Học lập trình tại Zent</p>
+ <!---> Thẻ p cuối cùng này sẽ được thay đổi màu xanh <--->
+ <p>Học lập trình sớm để đi làm</p>
+ <a href="https://vnua.edu.vn" target="_blank">Phát triển ứng dụng web</a>
+ <a href="https://google.com.vn">google.com</a>
+ <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+</body>
+</html>
