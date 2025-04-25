@@ -1,0 +1,63 @@
+.title {
+    text-align: center;
+    font-size: 36px;
+}
+.table_todolist {
+    border: 3px dashed orange;
+    border-radius: 10px;
+    width: 33%;
+    background-color: white;
+    margin: auto;
+    padding-right: 2%;
+}
+input[type="checkbox"] {
+    margin-right: 10px;   
+}
+  input[type="checkbox"]:checked + span {
+    color: red;
+  }
+.list {
+    list-style: none;
+    font-size: 1.5vw;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.table_todolist li {
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.table_todolist li:hover::after  {
+    content: "✅";
+}
+.table_todolist label:hover {
+    color: green;
+    cursor: pointer;
+}
+.table_todolist li:hover {
+    color: green;
+    cursor: pointer;
+}
+.morning:first-child {
+    box-shadow: 0 -2px 0 orange;
+}
+.morning {
+    background-color:  #fff1cf;
+}
+.morning:last-child {
+    box-shadow: 0 2px 0 orange;
+}
+.selected {
+    background-color: #f4a261;
+}
+.afternoon {
+    background-color: #d9f7f6;
+}
+.caption {
+    color: green;
+    text-align: center;
+    font-size: 18px;
+}
+
