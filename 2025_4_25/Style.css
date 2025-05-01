@@ -13,12 +13,9 @@
 input[type="checkbox"] {
     margin-right: 10px;   
 }
-  input[type="checkbox"]:checked + span {
-    color: red;
-  }
 .list {
     list-style: none;
-    font-size: 1.5vw;
+    font-size: 18px18px;
     padding: 2%;
     display: flex;
     flex-direction: column;
@@ -59,5 +56,8 @@ input[type="checkbox"] {
     color: green;
     text-align: center;
     font-size: 18px;
+}
+.important{
+    font-weight: bold;
 }
 
