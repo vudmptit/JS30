@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let diem=parseInt(prompt("nhap so diem :"));
+        function xepLoai(diem){
+            if (diem>=9){
+                document.write("Xuat sac");
+            }else if(diem>=8){
+                document.write("Gioi");
+            }else if(diem>=6.5){
+                document.write("Kha");
+            }else if(diem>=5){
+                document.write("Trung binh");
+            }else{
+                document.write("yeu");
+            };
+        };
+        xepLoai(diem);
+    </script>
+</body>
+</html>

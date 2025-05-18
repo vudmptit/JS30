@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n=parseInt(prompt("nhap so n:"));
+        function tongChuSo(n){
+            var tong=0;
+            while (n!==0){
+                let a=n%10;
+                tong+=a;
+                n=Math.floor(n/10)
+            };
+            document.write("ketQua:",tong)
+        };
+        tongChuSo(n);
+    </script>
+</body>
+</html>
