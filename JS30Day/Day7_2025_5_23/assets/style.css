@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(3,100px);
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+   
+}
+
+.fruit {
+    width: 100px;
+    height: 100px;
+    background-color:blanchedalmond;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+.fruit img {
+    height: 80px;
+    width: 80px;
+}
+
+.empty {
+    background-color:blanchedalmond;
+}
+
+.answer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+ .wrap {
+    background-color: blanchedalmond;
+    margin: 30px 550px;
+    padding: 30px 0;
+    border-radius: 10px;
+ }
+
