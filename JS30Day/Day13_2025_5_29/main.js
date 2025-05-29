@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const newRow = document.createElement('tr');
-
         newRow.innerHTML = `
             <td>${msv}</td>
             <td>${name}</td>
