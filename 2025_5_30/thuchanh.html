@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // student = {id :'ript001', name :'Duong Minh Vu', salary :'999999999'}
+        // document.write(student.id+' '+student.name+' '+student.salary);
+
+        // var sinhvien=new Object() ;
+        // sinhvien.id='ript001';
+        // sinhvien.name='Duong MInh Vu'
+        // sinhvien.salary='999999999'
+        // document.write(sinhvien.id+' '+sinhvien.name+' '+sinhvien.salary );
+
+        // function manu(id,name,salary) {
+        //     this.id =id;
+        //     this.name =name;
+        //     this.salary = salary;
+        // }
+
+        // nam= new manu('ript0222', 'namchester united',40000000);
+        // document.write(nam.id+ ' ' + nam.name +' ' + nam.salary)
+
+        class Person{
+            name;
+            age;
+            salary;
+            hello(){
+                document.write('good job'+ this.name);
+            }
+
+            changeSallary(newSalary){
+                this.salary = newSalary;
+            }
+        }
+
+        a = new Person();
+        a.name = 'Cristiano Ronaldo';
+        a.hello();
+        a.salary = 10000000000000000000000;
+        document.write('<br>'+ a.name + ': ' + a.salary);
+        a.changeSallary(9999999999999999999999999999)
+        document.write('<br>'+ a.name + ': ' +a.salary )
+    </script>
+</body>
+</html>
