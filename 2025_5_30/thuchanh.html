@@ -25,26 +25,55 @@
         // nam= new manu('ript0222', 'namchester united',40000000);
         // document.write(nam.id+ ' ' + nam.name +' ' + nam.salary)
 
-        class Person{
-            name;
-            age;
-            salary;
-            hello(){
-                document.write('good job'+ this.name);
-            }
+        // class Person{
+        //     name;
+        //     age;
+        //     salary;
+        //     hello(){
+        //         document.write('good job'+ this.name);
+        //     }
 
-            changeSallary(newSalary){
-                this.salary = newSalary;
-            }
+        //     changeSallary(newSalary){
+        //         this.salary = newSalary;
+        //     }
+        // }
+
+        // a = new Person();
+        // a.name = 'Cristiano Ronaldo';
+        // a.hello();
+        // a.salary = 10000000000000000000000;
+        // document.write('<br>'+ a.name + ': ' + a.salary);
+        // a.changeSallary(9999999999999999999999999999)
+        // document.write('<br>'+ a.name + ': ' +a.salary )
+
+        
+
+        // class Person{
+        //             name;
+        //             age;
+        //             salary;
+        //             constructor(name,age,salary) {  
+        //                 document.write("Hihi");
+        //             }  
+        //             hello(){
+        //                 document.write('<br>'+"Hello "+ this.name);
+        //             }
+        //         }
+
+        //         minh_vu = new Person("Minh Vu",18,800000);
+        //         minh_vu.hello()
+        function Student() {
+            this.name = 'Nam';
+            this.gender = 'Male';
         }
 
-        a = new Person();
-        a.name = 'Cristiano Ronaldo';
-        a.hello();
-        a.salary = 10000000000000000000000;
-        document.write('<br>'+ a.name + ': ' + a.salary);
-        a.changeSallary(9999999999999999999999999999)
-        document.write('<br>'+ a.name + ': ' +a.salary )
+        var studObj1 = new Student();
+        studObj1.age = 15;
+        alert(studObj1.age); 
+
+        var studObj2 = new Student();
+        alert(studObj2.age); 
+
     </script>
 </body>
 </html>
