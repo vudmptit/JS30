@@ -53,3 +53,13 @@ td {
     border: 1px solid gray;
     padding: 10px 20px;
 }
+
+.save {
+    background-color: aqua;
+    border: none;
+    width: 80px;
+    height: 30px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
