@@ -1,0 +1,91 @@
+class Product {
+    constructor(id, name, price, quantity) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    tongTien() {
+        return this.price * this.quantity;
+    }
+}
+
+let products = [];
+
+function addProduct() {
+    const id = parseInt(document.getElementById("id").value);
+    const name = document.getElementById("name").value.trim();
+    const price = parseFloat(document.getElementById("price").value);
+    const quantity = parseInt(document.getElementById("quantity").value);
+    const errorEl = document.getElementById("error");
+
+    if (products.some(p => p.id === id)) {
+        return alert('ID đã tồn tại. Vui lòng chọn ID')
+    }
+    errorEl.textContent = "";
+
+    const newProduct = new Product(id, name, price, quantity);
+    products.push(newProduct);
+
+    clearForm();
+    renderProducts();
+}
+
+function clearForm() {
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("quantity").value = "";
+}
+
+function renderProducts() {
+    const table = document.getElementById("productTable");
+    table.innerHTML = "";
+
+    products.forEach((product, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${product.id}</td>
+            <td>${product.name}</td>
+            <td>${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>${product.tongTien()}</td>
+            <td>
+                <button onclick="editProduct(${index})">Sửa</button>
+                <button onclick="deleteProduct(${index})">Xóa</button>
+            </td>
+        `;
+        table.appendChild(row);
+    });
+
+    document.getElementById("totalValue").textContent = tinhTongGiaTri();
+    document.getElementById("maxProduct").textContent = getMaxProductName();
+}
+
+function tinhTongGiaTri() {
+    return products.reduce((sum, p) => sum + p.tongTien(), 0);
+}
+
+function getMaxProductName() {
+    if (products.length === 0) return "Không có";
+    let max = products[0];
+    for (let p of products) {
+        if (p.price > max.price) max = p;
+    }
+    return `${max.name} (${max.price} VNĐ)`;
+}
+
+function deleteProduct(index) {
+    products.splice(index, 1);
+    renderProducts();
+}
+
+function editProduct(index) {
+    const product = products[index];
+    document.getElementById("id").value = product.id;
+    document.getElementById("name").value = product.name;
+    document.getElementById("price").value = product.price;
+    document.getElementById("quantity").value = product.quantity;
+    deleteProduct(index); 
+}

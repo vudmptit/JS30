@@ -14,19 +14,19 @@
                 this.baseSalary = baseSalary;
                 this.workingDays = workingDays;
             }
-
-            calculateSalasy() {
+            calculateSalary() {
                 return this.baseSalary * this.workingDays
             }
 
             show() {
-                const salary = calculateSalasy()
-                document.write(`ho ten: ${this.name} <br>`)
-                document.write(`chuc vu: ${this.position} <br>`)
-                document.write(`Luong: ${this.salary.toLocaleString()} VND`)
+                const salary = this.calculateSalary()
+                document.write(`họ tên:  ${this.name}  <br>`)
+                document.write(`chức vụ:  ${this.position}  <br>`)
+                document.write(`Lương thực nhận: ${salary.toLocaleString()} VND`)
             }
         }
-        const nv1 = new Employee('Duong Minh Vu', "boss", 9999999,99)
+
+        const nv1 = new Employee("Duong Minh Vu", "boss", 99999999999, 78)
         nv1.show()
     </script>
 </body>
