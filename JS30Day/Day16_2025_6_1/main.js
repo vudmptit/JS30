@@ -20,8 +20,17 @@ function addProduct() {
     const quantity = parseInt(document.getElementById("quantity").value);
     const errorEl = document.getElementById("error");
 
-    if (products.some(p => p.id === id)) {
-        return alert('ID đã tồn tại. Vui lòng chọn ID')
+    let idExists = false;
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].id === id) {
+            idExists = true;
+            break; 
+        }
+    }
+
+    if (idExists) {
+        alert("ID đã tồn tại. Vui lòng chọn ID khác");
+        return;
     }
     errorEl.textContent = "";
 
@@ -64,7 +73,11 @@ function renderProducts() {
 }
 
 function tinhTongGiaTri() {
-    return products.reduce((sum, p) => sum + p.tongTien(), 0);
+    let sum = 0;
+    for (let i = 0; i < products.length; i++) {
+        sum += products[i].tongTien();
+    }
+    return sum;
 }
 
 function getMaxProductName() {
@@ -88,4 +101,37 @@ function editProduct(index) {
     document.getElementById("price").value = product.price;
     document.getElementById("quantity").value = product.quantity;
     deleteProduct(index); 
+}
+
+function searchProduct() {
+    const searchId = parseInt(document.getElementById("searchId").value)
+    const table = document.getElementById("productTable");
+    table.innerHTML = "";
+
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].id === searchId) {
+            found = products[i];
+            foundIndex = i;
+            break; 
+    }
+    }
+
+    if (found) {
+        const row = document.createElement("tr");
+        row.innerHTML =`
+        <td>${found.id}</td>
+        <td>${found.name}</td>
+        <td>${found.price}</td>
+        <td>${found.quantity}</td>
+        <td>${found.tongTien()}</td>
+        <td>
+            <button onclick = "editProdutc(${products.indexOf(found)})">Sửa</button>
+            <button onclick = "deleteProdutc(${products.indexOf(found)})">Xoá</button>
+        </td>
+        `;
+        table.appendChild(row);
+
+        document.getElementById('totalValue'.textContent = "0")
+        document.getElementById('maxProduct'.textContent = "Không có")
+    }
 }
