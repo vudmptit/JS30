@@ -1,0 +1,184 @@
+/* Thiết lập font chữ và màu sắc cơ bản */
+body {
+    font-family: 'Open Sans', sans-serif; /* Bạn có thể thay đổi font này */
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Bạn có thể thay đổi font này */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Màu sắc chính của thương hiệu (ví dụ: màu nâu cà phê, màu vàng kem) */
+:root {
+    --primary-color: #AA8C7A; /* Màu chủ đạo */
+    --secondary-color: #AA8C7A; /* Màu thứ cấp, có thể giống primary hoặc khác */
+    --dark-color: #33211D; /* Màu tối cho nền, footer */
+    --light-color: #F6F5F1; /* Màu sáng cho nền, chữ */
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Các tiện ích Bootstrap tùy chỉnh */
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.pt-5 {
+    padding-top: 3rem !important;
+}
+
+.pb-5 {
+    padding-bottom: 3rem !important;
+}
+
+.my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+.nav-bar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.nav-bar .navbar {
+    padding: 0 15px; /* Điều chỉnh padding cho navbar */
+}
+
+.nav-bar .navbar-brand h1 {
+    font-size: 3rem; /* Kích thước chữ logo */
+    letter-spacing: 5px; /* Khoảng cách chữ logo */
+}
+
+.nav-bar .navbar-nav .nav-link {
+    padding: 30px 15px; /* Padding cho các mục menu */
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav-bar .navbar-nav .nav-link:hover,
+.nav-bar .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-bar .dropdown-menu {
+    border-radius: 0;
+    margin-top: 0;
+}
+
+/* Tùy chỉnh responsive cho navbar */
+@media (max-width: 991.98px) {
+    .nav-bar .navbar-brand h1 {
+        font-size: 2.5rem;
+    }
+    .nav-bar .navbar-nav .nav-link {
+        padding: 10px 15px;
+    }
+    .nav-bar .navbar-collapse {
+        background: rgba(51, 33, 29, .9); /* Nền cho menu khi thu gọn */
+    }
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Lớp phủ tối hơn cho chữ dễ nhìn */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.carousel-caption h2 {
+    font-size: 2.5rem;
+}
+
+.carousel-caption h1 {
+    font-size: 5rem;
+}
+
+.carousel-caption h2.text-primary {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.overlay-bottom {
+    position: relative;
+}
+
+.overlay-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Lớp phủ cho carousel */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h4 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-title h4::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+}
+
+.about img {
+    border-radius: 8px;
+}
