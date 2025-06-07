@@ -214,7 +214,7 @@ h1, h2, h3, h4, h5, h6 {
 /* service */
 
 .service {
-    background-color: #fff9ed;
+    /* background-color: #fff9ed; */
     padding: 60px 20px;
     font-family: 'Arial', sans-serif;
 }
@@ -296,3 +296,113 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
+.item {
+    display:grid;
+    grid-template-columns: repeat(2,500px);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+
+}
+
+/* sale */
+
+/* .saler {
+  background: url('coffee-beans.jpg') center/cover no-repeat;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Lớp phủ làm tối ảnh */
+.saler::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(111, 78, 55, 0.4);
+    z-index: 0;
+}
+
+.saler {
+    background-image: url(/JS30Day/Final_Project/img/img/bg.jpg);
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+
+/* Nội dung chính */
+.container-saler {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+  
+}
+
+/* Các tiêu đề */
+.text-saler1 {
+
+    display: inline-block;
+    font-size: 4rem;
+    font-weight: 800;
+    color: #d6a161;
+    margin-bottom: 10px;
+}
+
+.text-saler2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.text-saler3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #fff ;
+}
+
+/* FORM */
+form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Input email */
+.email {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Nút submit */
+.submit {
+    background-color: #d6a161;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.submit:hover {
+     opacity: 0.9;
+}
+
+.saler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
