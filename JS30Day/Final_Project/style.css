@@ -144,7 +144,7 @@ nav a {
 }
 
 
-/* container1 */
+/* About start */
 
 .container {
     position: relative;
@@ -211,38 +211,15 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 500px;
 }
 
-/* service */
+/* about end */
+
+/* Service Start */
 
 .service {
-    /* background-color: #fff9ed; */
     padding: 60px 20px;
     font-family: 'Arial', sans-serif;
 }
 
-/* .service .container {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.service .container .bar {
-    width: 50px;
-    height: 3px;
-    background-color: #e5a248;
-    margin: 0 auto 10px;
-}
-
-.service .container h4 {
-    color: #e5a248;
-    letter-spacing: 2px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.service .container h1 {
-    font-size: 36px;
-    color: #3b2f2f;
-    font-weight: bold;
-} */
 
 .wrapper-service {
     display: grid;
@@ -306,30 +283,21 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-/* sale */
-
-/* .saler {
-  background: url('coffee-beans.jpg') center/cover no-repeat;
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Offer Start */
+.offer {
+    position: relative;
+    background: url('/JS30Day/Final_Project/img/img/bg.jpg') center/cover no-repeat;
+    width: 100%;
+    padding: 100px 15px;
+    overflow: hidden;
 }
 
-/* Lớp phủ làm tối ảnh */
-.saler::before {
+.offer::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(111, 78, 55, 0.4);
+    background:rgba(78, 52, 46, 0.7);
     z-index: 0;
-}
-
-.saler {
-    background-image: url(/JS30Day/Final_Project/img/img/bg.jpg);
-    padding-bottom: 3rem;
-    padding-top: 3rem;
 }
 
 
@@ -341,12 +309,13 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
     max-width: 800px;
     padding: 20px;
+    margin: 48px 0;
+    padding: 48px 15px;
   
 }
 
 /* Các tiêu đề */
 .text-saler1 {
-
     display: inline-block;
     font-size: 4rem;
     font-weight: 800;
@@ -406,3 +375,84 @@ form {
     justify-content: center;
     align-items: center;
 }
+
+.container-saler {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+/* end offer */
+
+/* Menu Start */
+.section-title {
+    position: relative;
+    padding: 115px 0 35px 0;
+    text-align: center;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    margin-left: 1px;
+    background: #DA9F5B;
+}
+
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #33211D;
+}
+
+.text-uppercase.text-primary {
+    text-transform: uppercase;
+    font-weight: 500 !important;
+    font-size: 1.5rem;
+    margin: 0 0 8px;
+}
+
+h1, h2 {
+    font-weight: 700 !important;
+}
+
+
+.row-menu .menu {
+    position: relative;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 1 1 calc(50% - 15px);
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.row-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+/* Menu End */
