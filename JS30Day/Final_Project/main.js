@@ -45,3 +45,25 @@
 
     // Start
     startAutoSlide();
+
+    // Slider End
+
+    // Set date anh time
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const dateInput = document.getElementById('current-date');
+    const timeInput = document.getElementById('current-time');
+
+    const now = new Date();
+
+    // Format date to YYYY-MM-DD
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    dateInput.value = `${year}-${month}-${day}`;
+
+    // Format time to HH:MM
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    timeInput.value = `${hours}:${minutes}`;
+  });

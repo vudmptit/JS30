@@ -7,7 +7,6 @@
 body, html {
     width: 100%;
     height: 100%;
-    font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -202,12 +201,12 @@ nav a {
     font-weight: 700;
 }
 
+.text-reser3,
 .row1 p,
 .row3 p {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.5px;
-    font-family: "Montserrat", sans-serif;
     color: #333;
 }
 
@@ -217,6 +216,7 @@ nav a {
     font-size: 20px;
 }
 
+.row-reservation h5,
 .row3 h5 {
     display: flex;
     align-items: center;
@@ -227,7 +227,7 @@ nav a {
     margin-bottom: 15px;
 }
 
-
+.row-reservation h5 i,
 .row3 h5 i {
     font-size: 20px;
     color: #DA9F5B;
@@ -302,9 +302,10 @@ h4 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Roboto", sans-serif;
+  
     margin-bottom: 0.5rem;
 }
+
 
 .row .row1,
 .row .row3 {
@@ -509,6 +510,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Các tiêu đề */
+.text-reser1,
 .text-saler1 {
     display: inline-block;
     font-size: 4rem;
@@ -517,6 +519,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
+.text-reser2,
 .text-saler2 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -561,7 +564,7 @@ form {
 }
 
 .submit:hover {
-     opacity: 0.9;
+    opacity: 0.9;
 }
 
 .saler {
@@ -781,3 +784,198 @@ h1, h2 {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Reservation start */
+.container-reservation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 115px 0 35px;
+  background-color:antiquewhite;
+}
+
+.reservation {
+  width: 1200px;
+  min-height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(/JS30Day/Final_Project/img/img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 60px 80px;
+}
+
+.reservation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 26, 14, 0.95);
+  z-index: 1;
+}
+
+/* Left side */
+.row-reservation {
+  flex: 1;
+  max-width: 50%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  color: #fff;
+}
+
+.row-reservation h5 {
+  padding: 8px 0;
+  font-size: 16px;
+  color: #fff   ;
+}
+
+.row-reservation i {
+  color: #DA9F5B;
+  margin-right: 10px;
+}
+
+.row-reservation p {
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #eee;
+  line-height: 1.6;
+}
+
+.text-reser1 {
+  font-size: 64px;
+  font-weight: bold;
+  color: #DA9F5B;
+}
+
+.text-reser2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.text-reser3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #ddd;
+}
+
+/* Right side - form */
+.form-reservation {
+  flex: 1;
+  max-width: 50%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+
+.form-content {
+  background-color: rgba(52, 39, 29, 0.9);
+  padding: 40px 32px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.form-content h1 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-table {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(52, 39, 29, 0.9);
+}
+
+.form-group input,
+.select-reservation {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 16px;
+  border: 1px solid #DA9F5B;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #bbb;
+}
+
+.form-group input:focus,
+.select-reservation:focus {
+  outline: none;
+  border-color: #f0b169;
+  box-shadow: 0 0 8px rgba(218, 159, 91, 0.6);
+  transform: scale(0.99);
+}
+
+.select-reservation {
+  
+  appearance:unset;
+}
+
+/* Button */
+.btn-reservation {
+  width: 100%;
+  padding: 16px;
+  background-color: #DA9F5B;
+  color: #2b1a0e;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-reservation:hover {
+  background-color: #c88a45;
+  transform: scale(0.99);
+}
+
+.btn-reservation:active {
+    background-color: #c88a45;
+}
+
+.select-reservation option {
+  background-color: #34271d; 
+  color: #fff;
+}
+
+.form-content {
+  background-color: rgba(52, 39, 29, 0.9);
+  padding: 40px 32px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  transition: all 0.3s ease; /* Thêm chuyển đổi */
+}
+
+.form-content:hover {
+  transform: translateY(-4px); /* nhẹ nhàng nhấc lên */
+  box-shadow: 0 12px 24px rgba(218, 159, 91, 0.4); /* bóng sáng */
+  background-color: rgba(52, 39, 29, 0.95); /* đậm hơn chút */
+}
+
+
+/* Reservation end */
