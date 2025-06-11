@@ -31,7 +31,6 @@
       clearInterval(autoSlide);
     }
 
-    // Event listeners
     nextBtn.addEventListener('click', () => {
       goToNextSlide();
     });
@@ -43,27 +42,67 @@
     carousel.addEventListener('mouseenter', stopAutoSlide);
     carousel.addEventListener('mouseleave', startAutoSlide);
 
-    // Start
     startAutoSlide();
 
     // Slider End
 
-    // Set date anh time
+    // caì đặt thời gian
 
   window.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.getElementById('current-date');
-    const timeInput = document.getElementById('current-time');
 
     const now = new Date();
 
-    // Format date to YYYY-MM-DD
+    // ngày
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
     dateInput.value = `${year}-${month}-${day}`;
 
-    // Format time to HH:MM
+  });
+
+  // Tự động cập nhật thời gian hiện tại vào input time mỗi giây
+window.addEventListener('DOMContentLoaded', () => {
+  const timeInput = document.getElementById('current-time');
+  function updateTime() {
+    const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     timeInput.value = `${hours}:${minutes}`;
-  });
+  }
+  updateTime();
+  setInterval(updateTime, 1000);  
+});
+
+
+    const buttons = document.querySelectorAll('.btn-testi');
+    const items = document.querySelectorAll('.testimonial-item');
+
+    // Click to activate testimonial
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const index = button.getAttribute('data-index');
+
+            // Remove active class from all
+            items.forEach(item => item.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active to selected
+            document.querySelector(`.testimonial-item[data-index="${index}"]`).classList.add('active');
+            button.classList.add('active');
+        });
+    });
+
+    // Hover item to affect corresponding button
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const index = item.getAttribute('data-index');
+            const btn = document.querySelector(`.btn-testi[data-index="${index}"]`);
+            btn.classList.add('hovered');
+        });
+        item.addEventListener('mouseleave', () => {
+            const index = item.getAttribute('data-index');
+            const btn = document.querySelector(`.btn-testi[data-index="${index}"]`);
+            btn.classList.remove('hovered');
+        });
+    });
