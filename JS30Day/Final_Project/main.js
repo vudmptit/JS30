@@ -74,26 +74,24 @@ window.addEventListener('DOMContentLoaded', () => {
   setInterval(updateTime, 1000);  
 });
 
-
+// đánh giá khách hàng
     const buttons = document.querySelectorAll('.btn-testi');
     const items = document.querySelectorAll('.testimonial-item');
 
-    // Click to activate testimonial
+  
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const index = button.getAttribute('data-index');
 
-            // Remove active class from all
             items.forEach(item => item.classList.remove('active'));
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // Add active to selected
             document.querySelector(`.testimonial-item[data-index="${index}"]`).classList.add('active');
             button.classList.add('active');
         });
     });
 
-    // Hover item to affect corresponding button
+    // di chuột để ảnh hưởng đến nút tương ứngứng
     items.forEach(item => {
         item.addEventListener('mouseenter', () => {
             const index = item.getAttribute('data-index');

@@ -13,58 +13,75 @@ body, html {
     color: #555;
     text-align: left;
     background-color: antiquewhite;
+    position: relative;
 }
 
 /* Nav */
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-    color: #fff;
-    padding: 16px 40px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 0 40px;
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 90%;
+  z-index: 10;
+  border-radius: 100px;
+  margin-top: 2%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 .navbar-brand h1 {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 60px;
-    font-family: "Roboto", sans-serif;
-    color: #fff;
-    text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-decoration: none;
 }
 
 nav a {
-    text-decoration: none;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    font-weight: 700;
-    font-size: large;
+  padding: 8px 15px;
+  font-weight: 700;
+  font-size: large;
 }
 
-.navbar-nav a:active,
-.navbar-nav a:hover {
-    color: #DA9F5B;
+ul:hover a {
+  color: #ccc;
 }
 
-
-.navbar-nav {
-    display: flex;
-    gap: 30px;
+ul:hover a:hover {
+  color: #fff;
+  box-shadow: 0 2px 0 0 currentColor;
 }
 
-.navbar-collapse {
-    padding: 20px;
+.nav-item.active {
+  color: #ffd700;   
+  border-bottom: 2px solid #ffd700;
+}
+
+nav h1 {
+    margin: 0 !important;
 }
 
 /* Slider */
@@ -109,9 +126,15 @@ nav a {
     z-index: 2;
 }
 
+.carousel-overlay h2{
+    margin: 0 !important;
+}
+
 .carousel-overlay h1 {
-    font-size: 7rem;
+    font-size: 9rem;
     margin: 0;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    text-transform: none !important;
 }
 
 .carousel-overlay h2 {
@@ -146,6 +169,9 @@ nav a {
 
 /* About start */
 
+.img {
+    filter: drop-shadow(0 0 16px grey);
+}
 .container {
     position: relative;
     display: flex;
@@ -491,35 +517,36 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     position: absolute;
     inset: 0;
-    background:rgba(78, 52, 46, 0.7);
+    background: rgba(78, 52, 46, 0.7);
     z-index: 0;
 }
 
-
-/* Nội dung chính */
 .container-saler {
     position: relative;
     text-align: center;
     color: #fff;
     z-index: 1;
     max-width: 800px;
-    padding: 20px;
-    margin: 48px 0;
+    margin: 48px auto;
     padding: 48px 15px;
-  
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Các tiêu đề */
-.text-reser1,
+.container-saler:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
 .text-saler1 {
-    display: inline-block;
     font-size: 4rem;
     font-weight: 800;
     color: #d6a161;
     margin-bottom: 10px;
 }
 
-.text-reser2,
 .text-saler2 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -529,30 +556,34 @@ h1, h2, h3, h4, h5, h6 {
 .text-saler3 {
     font-size: 1.2rem;
     margin-bottom: 25px;
-    color: #fff ;
+    color: #fff;
 }
 
 /* FORM */
-form {
+.container-saler form {
     display: flex;
     max-width: 500px;
     margin: 0 auto;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 40px;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
 /* Input email */
-.email {
+.container-saler .email {
     flex: 1;
-    padding: 1rem;
+    padding: 1rem 1.2rem;
     border: none;
     font-size: 1rem;
     outline: none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 /* Nút submit */
-.submit {
+.container-saler .submit {
     background-color: #d6a161;
     color: white;
     border: none;
@@ -560,30 +591,37 @@ form {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.submit:hover {
-    opacity: 0.9;
+.container-saler .submit:hover {
+    background-color: #c68d4a;
+    transform: scale(1.05);
 }
 
-.saler {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-saler .email:focus {
+    background-color: #f9f4ee;
 }
 
-.container-saler {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    color: #fff;
+.container-saler form:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+ form:hover .email {
+    background-color: #f5f0eb;
+    transition: background-color 0.3s ease;
 }
 
 
-
+.container-saler .form:hover .submit {
+    background-color: #c68d4a;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
 /* end offer */
 
 /* Menu Start */
@@ -1125,7 +1163,7 @@ footer::before {
     box-shadow: 0 6px 15px rgba(255, 188, 91, 0.3);
 }
 
-.form-control {
+.form-footer {
     flex: 1;
     padding: 12px 16px;
     border: none;
@@ -1213,5 +1251,4 @@ footer::before {
 .text-uppercase {
     text-transform: uppercase;
 }
-
 /* Footer end */
