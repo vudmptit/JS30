@@ -12,7 +12,7 @@ body, html {
     line-height: 1.5;
     color: #555;
     text-align: left;
-    background-color: antiquewhite;
+    background-color: #FFFBF2;
     position: relative;
 }
 
@@ -58,12 +58,13 @@ nav a {
 
 ul:hover a {
   color: grey;
+  transition: 0.3s ease;
 }
 
 ul:hover a:hover {
   color:  #DA9F5B;
   box-shadow: 0 2px 0 0 currentColor;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s eases;
 }
 
 .navbar-nav {
@@ -382,7 +383,7 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    background-color: antiquewhite;
+    background-color: #FFFBF2;
 }
 
 .item1:hover {
@@ -708,7 +709,7 @@ h1, h2 {
     flex: 1;
     min-width: 300px;
     padding: 20px;
-    background-color: antiquewhite !important;
+    background-color: #FFFBF2 !important;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -836,7 +837,7 @@ h1, h2 {
   align-items: center;
   width: 100%;
   padding: 115px 0 115px;
-  background-color:antiquewhite;
+  background-color: #FFFBF2;
 }
 
 .reservation {
