@@ -19,69 +19,60 @@ body, html {
 /* Nav */
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  padding: 0 40px;
-  position: absolute;
-  top: 0;
-  left: 80px;
-  width: 90%;
-  z-index: 10;
-  border-radius: 100px;
-  margin-top: 2%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: #fff;
+    padding: 16px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .navbar-brand h1 {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 30px;
-  font-family: "Roboto", sans-serif;
-  color: #fff;
-  text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    text-decoration: none;
 }
 
 nav a {
-  text-decoration: none;
-  color: #fff;
+    text-decoration: none;
+}
+.navbar-nav li {
+    list-style-type: none;
+}
+
+.navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: 700;
+    font-size: large;
+}
+
+ul:hover a {
+  color: grey;
+}
+
+ul:hover a:hover {
+  color:  #DA9F5B;
+  box-shadow: 0 2px 0 0 currentColor;
   transition: 0.3s ease-in-out;
 }
 
 .navbar-nav {
-  display: flex;
-  gap: 30px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    gap: 30px;
 }
 
-.navbar-nav a {
-  padding: 8px 15px;
-  font-weight: 700;
-  font-size: large;
-}
-
-ul:hover a {
-  color: #ccc;
-}
-
-ul:hover a:hover {
-  color: #fff;
-  box-shadow: 0 2px 0 0 currentColor;
-}
-
-.nav-item.active {
-  color: #ffd700;   
-  border-bottom: 2px solid #ffd700;
-}
-
-nav h1 {
-    margin: 0 !important;
+.navbar-collapse {
+    padding: 20px;
 }
 
 /* Slider */
@@ -117,7 +108,7 @@ nav h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(111, 78, 55, 0.4);
+    background: rgba(43, 26, 14, 0.7);;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -411,7 +402,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .item1:hover .img-service {
     transform: scale(1.08);
-    filter: brightness(1.1);
+    /* filter: brightness(1.1); */
     border: 2px solid #DA9F5B;
 }
 
@@ -517,7 +508,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(78, 52, 46, 0.7);
+    background: rgba(43, 26, 14, 0.9);
     z-index: 0;
 }
 
@@ -529,15 +520,14 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 800px;
     margin: 48px auto;
     padding: 48px 15px;
-    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 17px rgba(255, 255, 255, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .container-saler:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    transform: translateY(-4px); /* nhẹ nhàng nhấc lên */
+    box-shadow: 0 12px 24px rgba(218, 159, 91, 0.4); /* bóng sáng */
 }
 
 .text-saler1 {
@@ -598,7 +588,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .container-saler .submit:hover {
     background-color: #c68d4a;
-    transform: scale(1.05);
 }
 
 .container-saler .email:focus {
@@ -606,8 +595,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-saler form:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-    transform: translateY(-3px);
+    transform: translateY(-4px); /* nhẹ nhàng nhấc lên */
+    box-shadow: 0 12px 24px rgba(218, 159, 91, 0.4); /* bóng sáng */
+    background-color: rgba(52, 39, 29, 0.95); /* đậm hơn chút */
     transition: all 0.3s ease;
 }
 
@@ -621,6 +611,22 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #c68d4a;
     transform: scale(1.05);
     transition: all 0.3s ease;
+}
+
+.overlay-bottom {
+    left: 0px;
+    position: absolute;
+    z-index: 10;
+    bottom: -11px;
+    width: 100%;
+}
+
+.overlay-top {
+    left: 0px;  
+    position: absolute;
+    z-index: 10;
+    top: -11px;
+    width: 100%;
 }
 /* end offer */
 
@@ -829,7 +835,7 @@ h1, h2 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 115px 0 0;
+  padding: 115px 0 115px;
   background-color:antiquewhite;
 }
 
@@ -1120,7 +1126,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(52, 39, 29, 0.9); /* Lớp phủ mờ */
+    background: rgba(43, 26, 14, 0.9);; /* Lớp phủ mờ */
     z-index: 0;
 }
 

@@ -1,0 +1,48 @@
+body {
+    background-color: #FFFBF2 !important;
+}
+
+.wrapper-header {
+    background-image: url(/JS30Day/Final_Project/img/img/bg.jpg);
+    width: 100% ;
+    height: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.wrapper-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 26, 14, 0.8);
+    z-index: 1;
+}
+
+head {
+    position: relative;
+}
+
+.text-about {
+    color: #fff;
+    font-size: 5rem;
+    z-index: 3;
+}
+
+.text2-about {
+    display: flex;
+    color: #fff;
+    font-size: 1.5rem;
+    gap: 10px ;
+    z-index: 3;
+}
+
+.container-fluid {
+    background-color: #FFFBF2!important;
+}
