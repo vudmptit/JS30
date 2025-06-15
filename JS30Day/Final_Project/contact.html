@@ -44,17 +44,68 @@
         </nav>
 <!-- Navbar end -->
 
-<!-- Menu Start -->
-    <div class="container-fluid ">
-        <div class="container-menu  ">
-            <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contact us</h4>
-                <h1 class="text-white display-4">Feel Free To Contact</h1>
+<!-- Contact Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="container-menu  ">
+                <div class="section-title">
+                    <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contact us</h4>
+                    <h1 class="text-white display-4">Feel Free To Contact</h1>
+                </div>
+            </div>  
+            <div class="row1-contact">
+                <div class="row1-content">
+                    <i class="fa fa-2x fa-map-marker-alt"></i>
+                    <h4 class="font-weight-bold">Address</h4>
+                    <p>123 Street, New York, USA</p>
+                </div>
+                <div class="row1-content">
+                    <i class="fa fa-2x fa-phone-alt"></i>
+                    <h4 class="font-weight-bold">Phone</h4>
+                    <p>+012 345 6789</p>
+                </div>
+                <div class="row1-content">
+                    <i class="far fa-2x fa-envelope"></i>
+                    <h4 class="font-weight-bold">Email</h4>
+                    <p>info@example.com</p>
+                </div>
             </div>
-            
+            <div class="row">
+                <div class="maps">
+                    <iframe style="width: 500px; height: 500px;"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1007087283816!2d105.7721482!3d21.0212486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab39d984891d%3A0x6b8db13921d6c6c1!2zSOG6o2kgQsOgIFRow7ogTMOqIFbDoG4!5e0!3m2!1svi!2s!4v1718452445085!5m2!1svi!2s"></iframe>
+                </div>
+                <div class="wrapper-form">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="contact-group">
+                                <input type="text" class="form-control bg-transparent p-4" id="name" placeholder="Your Name"/>
+                                <p class="warning"></p>
+                            </div>
+                            <div class="contact-group">
+                                <input type="email" class="form-control bg-transparent p-4" id="email" placeholder="Your Email" />
+                                <p class="warning"></p>
+                            </div>
+                            <div class="contact-group">
+                                <input type="text" class="form-control bg-transparent p-4" id="subject" placeholder="Subject"/>
+                                <p class="warning"></p>
+                            </div>
+                            <div class="contact-group">
+                                <textarea class="text-contact" rows="5" id="message" placeholder="Message"></textarea>
+                                <p class="warning"></p>
+                            </div>
+                            <div>
+                                <button class="btn-contact" type="submit" id="sendMessageButton">Send
+                                    Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-<!-- Menu End -->
+<!-- Contact End -->
 
      
 <!-- Footer Start -->
