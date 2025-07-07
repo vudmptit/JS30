@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="/JS30Day/Final_Project/css/about.css">
+    <link rel="stylesheet" href="/JS30Day/Final_Project/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/JS30Day/Final_Project/css/menu.css">
+</head> 
+<body>
+<!-- Title start -->
+    <head class="about-us">
+        <div class="wrapper-header">
+            <h1 class="text-about">Menu</h1>
+            <div class="text2-about">
+                <p>Home</p>
+                <p>/</p>
+                <p>Menu</p>
+            </div>
+            <div class="overlay-bottom">
+                <img src="/JS30Day/Final_Project/img/img/overlay-bottom.png" alt="overlay-bottom" class="bottom" style="width: 100%;">
+            </div>
+        </div>
+    </head>
+<!-- Title end -->
+
+<!--Navbar start  -->
+        <nav>
+            <a href="/JS30Day/Final_Project/index.html" class="navbar-brand">
+                <i class="fa-solid fa-mug-hot"></i>
+                <h1 style="font-family: 'Times New Roman', Times, serif; text-transform: none; font-size: 30px; margin-bottom: 0px;">Syntax Cafe</h1>
+            </a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li><a href="home.html" class="nav-item">Home</a></li>
+                    <li><a href="about.html" class="nav-item">About</a></li>
+                    <li><a href="book-table.html" class="nav-item">Book Table</a></li>
+                    <li><a href="menu.html" class="nav-item">Menu</a></li>
+                    <li><a href="contact.html" class="nav-item">Contact</a></li>
+                </ul> 
+            </div>
+            <div class="navbar-shop">
+               <a href="../html/shop.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h3>Giỏ hàng </h3>
+               </a>
+                <p>|</p>
+            </div>
+            <div class="logout">
+                <button id="logout-btn"><i class="fa-solid fa-user-tie"></i> Log Out</button>
+            </div>
+        </nav>
+<!-- order -->
+ <div class="order-wrapper">
+    <div class="section-title">
+        <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Pricing</h4>
+        <h1 class="text-white display-4">Competitive Pricing</h1>
+    </div>
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="drink">Drink</button>
+        <button class="filter-btn" data-category="food">Food</button>
+        <button class="filter-btn" data-category="snack">Cake</button>
+    </div>
+
+    <div class="menu-section">
+
+        <!-- Coffee Group -->
+        <div class="menu-group" data-group="drink"> 
+            <div class="menu-title"> Coffee</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/americano.jpg" alt="">
+                    <h4>Americano Coffee</h4>
+                    <p> 45.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/capuchino.jpg" alt="">
+                    <h4>Cappuccino</h4>
+                    <p> 45.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/latte.webp" alt="">
+                    <h4>Caffe Latte</h4>
+                    <p> 45.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/ice coffe.jpg" alt="">
+                    <h4>Palm Sugar Milk Coffee</h4>
+                    <p> 35.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/esspresso.jpg" alt="">
+                    <h4>Espresso</h4>
+                    <p> 35.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Non-Coffee Group -->
+        <div class="menu-group" data-group="drink">
+            <div class="menu-title"> Non-Coffee</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/lemon.jpg" alt="">
+                    <h4>Lemon Tea</h4>
+                    <p> 15.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/tra-vai-tth.jpg" alt="">
+                    <h4>Lychee Tea</h4>
+                    <p> 25.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/mattchalate.jpg" alt="">
+                    <h4>Matcha Latte</h4>
+                    <p> 35.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/latte red.jpg" alt="">
+                    <h4>Red Velvet Latte</h4>
+                    <p> 35.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/nước cam.avif" alt="">
+                    <h4>Orange Juce</h4>
+                    <p> 25.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Group -->
+        <div class="menu-group" data-group="food">
+            <div class="menu-title"> Food</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/bánh mì.jpg" alt="">
+                    <h4>Bánh Mì</h4>
+                    <p> 55.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/gà rán.jpg" alt="">
+                    <h4> Gà Rán</h4>
+                    <p> 65.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/chân gà.jpg" alt="">
+                    <h4>Chân Gà xả tắc</h4>
+                    <p> 55.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/steak.webp" alt="">
+                    <h4>Steak</h4>
+                    <p> 60.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/bún bò.jpg" alt="">
+                    <h4>Bún Bò O Phương</h4>
+                    <p> 60.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Snack Group -->
+        <div class="menu-group" data-group="snack">
+            <div class="menu-title"> Cake</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/pudding.webp" alt="">
+                    <h4>Pudding</h4>
+                    <p> 10.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/pudding chocolate.webp" alt="">
+                    <h4>Pudding chocolate</h4>
+                    <p> 12.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/pudding xoài.webp" alt="">
+                    <h4>pudding mango</h4>
+                    <p> 15.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/pudding berry.webp" alt="">
+                    <h4>Pudding Dau</h4>
+                    <p> 15.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/JS30Day/Final_Project/img/img/flan.webp" alt="">
+                    <h4>Flan</h4>
+                    <p> 15.000 VND</p>
+                    <div class="menu-actions">
+                        <button class="btn-order">Order</button>
+                        <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ </div>
+
+<!-- Footer Start -->
+        <footer>
+            <div class="overlay-top">
+                <img src="/JS30Day/Final_Project/img/img/overlay-top.png" alt="overlay-top" class="top" style="width: 100%;">
+            </div>
+            <div class="footer-info">
+                <div class="fotter-item1 footer-item">
+                    <h4 class="text-uppercase">Get in touch</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>394, My Dinh, Ha Noi, Viet Nam </p>
+                    <p><i class="fa-solid fa-phone-volume"></i>+ 0866 099 072</p>
+                    <p><i class="fa-solid fa-envelope"></i>duongminhvuabc@gmail.com</p>
+                </div>
+
+                <div class="fotter-item2 footer-item">
+                    <h4 class="text-uppercase">follow us</h4>
+                    <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+                    <div class="icon">
+                        <a href="#" class="icon-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="icon-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="icon-link"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="fotter-item3 footer-item">
+                    <h4 class="text-uppercase">Open house</h4>
+                    <div class="time-open">
+                        <h6>Monday - Friday</h6>
+                        <p>8.00 AM - 8.00 PM</p>
+                        <h6>Saturday - Sunday</h6>
+                        <p>2.00 PM - 8.00 PM</p>
+                        
+                    </div>
+                </div>
+
+                <div class="fotter-item4 footer-item">
+                    <h4 class="text-uppercase">Newsletter</h4>
+                    <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email" class="form-footer">
+                        <button class="btn-footer" type="submit">Sign Up</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-end" style="border-color: rgba(256, 256, 256, .1) !important;">
+                <p class=" text-footer-end">Copyright &copy; <a class="font-weight-bold" href="#">Domain</a>. All Rights Reserved.</a></p>
+                <p class=" text-footer-end">Designed by <a class="font-weight-bold" href="https://htmlcodex.com">HTML Codex</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></a></p>
+            </div>
+        </footer>
+    <!-- Footer End -->
+
+        <script src="/JS30Day/Final_Project/js/menu.js"></script>
+        <script src="../js/main.js"></script>
+</body>
+</html>

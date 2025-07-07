@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping</title>
+    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/JS30Day/Final_Project/index.html" class="navbar-brand">
+            <i class="fa-solid fa-mug-hot"></i>
+            <h1 style="font-family: 'Times New Roman', Times, serif; text-transform: none; font-size: 30px; margin-bottom: 0px;">Syntax Cafe</h1>
+        </a>
+        <div class="navbar-collapse">
+            <ul class="navbar-nav">
+                <li><a href="home.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="book-table.html" class="nav-item">Book Table</a></li>
+                <li><a href="menu.html" class="nav-item">Menu</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+            </ul> 
+        </div>
+        <div class="navbar-shop">
+            <a href="../html/shop.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>Giỏ hàng </h3>
+            </a>
+            <p>|</p>
+        </div>
+        <div class="logout">
+            <button id="logout-btn"><i class="fa-solid fa-user-tie"></i> Log Out</button>
+        </div>
+    </nav>
+
+    <!--nav  -->
+    <h1 style="text-align:center;">Giỏ hàng của bạn</h1>
+    <div id="cart-container"></div>
+    <div style="text-align: center; margin-top: 20px;">
+        <button id="checkout-btn" style="padding: 10px 20px; font-size: 18px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Thanh toán</button>
+    </div>
+    <script src="../js/shop.js"></script>
+</body> 
+</html>
