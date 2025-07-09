@@ -4,17 +4,109 @@ body {
     color: #222;
 }
 
-.wrapper-header {
-    background-image: url(/JS30Day/Final_Project/img/img/about.jpg);
-    width: 100% ;
-    height: 60%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
+.wrapper-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg width="180" height="80" viewBox="0 0 180 80" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="90" cy="40" rx="90" ry="20" fill="%23b08968" fill-opacity="0.18"/></svg>') no-repeat center/contain;
+    z-index: 2;
+    pointer-events: none;
 }
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.text-about {
+    color: #fff;
+    font-size: 4.2rem;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    z-index: 3;
+    text-shadow: 0 6px 32px rgba(44,24,16,0.25), 0 1px 0 #b08968;
+    position: relative;
+    animation: fadeInTitle 1.2s 0.2s cubic-bezier(.4,2,.6,1) both;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Coffee cup icon (FontAwesome) */
+.text-about::before {
+    content: '\f0f4';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #d19151;
+    font-size: 2.2rem;
+    margin-right: 10px;
+    filter: drop-shadow(0 2px 8px #b08968aa);
+    opacity: 0.85;
+    animation: fadeInCup 1.2s 0.5s cubic-bezier(.4,2,.6,1) both;
+}
+
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInCup {
+    from { opacity: 0; transform: scale(0.7) rotate(-20deg); }
+    to { opacity: 0.85; transform: scale(1) rotate(0); }
+}
+
+.text2-about {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2rem;
+    gap: 10px;
+    z-index: 3;
+    margin-top: 10px;
+    opacity: 0.92;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    background: rgba(176,137,104,0.18);
+    padding: 6px 22px;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(176,137,104,0.08);
+    animation: fadeInBreadcrumb 1.2s 0.5s cubic-bezier(.4,2,.6,1) both;
+}
+.text2-about p {
+    margin: 0 4px;
+    color: #f8f6f2;
+    font-weight: 500;
+    font-size: 1.1rem;
+    opacity: 0.95;
+    transition: color 0.2s;
+}
+.text2-about p:not(:last-child)::after {
+    content: '\f105';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #d19151;
+    margin: 0 8px;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+.text2-about p:hover {
+    color: #d19151;
+}
+    @keyframes fadeInBreadcrumb {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 0.92; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+        .wrapper-header { height: 180px; border-radius: 0 0 20px 20px; }
+        .text-about { font-size: 2.2rem; }
+        .wrapper-header::after { width: 90px; height: 40px; }
+        .text2-about { font-size: 0.95rem; padding: 4px 10px; }
+    }
 
 .wrapper-header::before {
     content: "";
@@ -29,20 +121,6 @@ body {
 
 head {
     position: relative;
-}
-
-.text-about {
-    color: #fff;
-    font-size: 5rem;
-    z-index: 3;
-}
-
-.text2-about {
-    display: flex;
-    color: #fff;
-    font-size: 1.5rem;
-    gap: 10px ;
-    z-index: 3;
 }
 
 .container-fluid {
@@ -246,6 +324,39 @@ input:focus, textarea:focus, select:focus {
 .section-title h1, .section-title h4 {
     font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
     color: #b08968;
+}
+
+.wrapper-header {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.text2-about {
+  font-style: italic;
+  font-size: 1.25rem;
+  opacity: 0.9;
+  animation: fadeIn 1.8s ease-in;
+  letter-spacing: 1px;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.about-intro {
+  color: #fceada;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 700px;
+  line-height: 1.6;
+  z-index: 3;
+}
+
+.wrapper-header::before {
+  backdrop-filter: blur(2px);
 }
 
 @media (max-width: 768px) {

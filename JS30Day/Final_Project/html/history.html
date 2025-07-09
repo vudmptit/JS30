@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử đơn hàng - Syntax Cafe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/history.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="../html/home.html" class="navbar-brand">
+                <i class="fa-solid fa-mug-hot"></i>
+                <h1 class="brand-title">Syntax Cafe</h1>
+            </a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li><a href="home.html" class="nav-item">Home</a></li>
+                    <li><a href="about.html" class="nav-item">About</a></li>
+                    <li><a href="book-table.html" class="nav-item">Book Table</a></li>
+                    <li><a href="menu.html" class="nav-item">Menu</a></li>
+                    <li><a href="contact.html" class="nav-item">Contact</a></li>
+                </ul> 
+            </div>
+            <div class="navbar-greeting">
+                <span>Xin chào, Khách hàng!</span>
+            </div>
+            <div class="navbar-shop">
+               <a href="shop.html" class="cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                    <span class="cart-text"></span>
+               </a>
+            </div>
+            <div class="logout">
+                <button id="logout-btn" class="logout-button">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Log Out</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="history-container" style="margin-top: 110px;">
+        <a href="home.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Quay lại trang chủ
+        </a>
+        
+        <div class="history-header">
+            <h1><i class="fas fa-history"></i> Lịch sử đơn hàng</h1>
+            <p>Xem lại các đơn hàng đã đặt</p>
+        </div>
+
+        <div class="history-actions" style="display: flex; justify-content: flex-end; gap: 12px; align-items: center; margin-bottom: 20px;">
+            <button id="clear-booking-btn" class="clear-btn" style="background:#17a2b8;">
+                <i class="fas fa-trash"></i> Xóa lịch sử đặt bàn
+            </button>
+            <button id="clear-history-btn" class="clear-btn">
+                <i class="fas fa-trash"></i> Xóa toàn bộ lịch sử
+            </button>
+        </div>
+
+        <div id="history-container">
+            <!-- Nội dung sẽ được JS điền vào -->
+            <div class="empty-history">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Bạn chưa có đơn hàng nào</h3>
+                <p>Hãy mua sắm và tạo đơn hàng đầu tiên của bạn!</p>
+                <a href="menu.html" class="back-btn">
+                    <i class="fas fa-utensils"></i> Xem menu
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/history.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

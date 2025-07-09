@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syntax Cafe - Home</title>
+    <link rel="stylesheet" href="../css/book-table.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -17,17 +18,21 @@
             </a>
             <div class="navbar-collapse">
                 <ul class="navbar-nav">
-                    <li><a href="home.html" class="nav-item">Home</a></li>
+                    <li><a href="home.html" class="nav-item active">Home</a></li>
                     <li><a href="about.html" class="nav-item">About</a></li>
                     <li><a href="book-table.html" class="nav-item">Book Table</a></li>
                     <li><a href="menu.html" class="nav-item">Menu</a></li>
                     <li><a href="contact.html" class="nav-item">Contact</a></li>
                 </ul> 
             </div>
+            <div class="navbar-greeting">
+                <span>Xin chào, Khách hàng!</span>
+            </div>
             <div class="navbar-shop">
                <a href="shop.html" class="cart-link">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-text">Cart</span>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                    <span class="cart-text"></span>
                </a>
             </div>
             <div class="logout">
@@ -47,26 +52,21 @@
                     <img src="/JS30Day/Final_Project/img/img/slide1 (2).jpg" alt="Coffee Image 1" class="carousel-image">
                     <div class="carousel-overlay">
                         <h2>We Have Been Serving</h2>
-                        <h1>Coffee</h1>
+                        <h1>Syntax Cafe</h1>
                         <h2>* SINCE 1950 *</h2>
+                        <p>Experience the perfect blend of tradition and innovation</p>
                     </div>
                 </div>
                 <div class="carousel-slide">
-                    <img src="/JS30Day/Final_Project/img/img/slide1.jpg" alt="Coffee Image 1" class="carousel-image">
+                    <img src="../img/img/slide2.jpg" alt="Coffee Image 2" class="carousel-image">
                     <div class="carousel-overlay">
                         <h2>We Have Been Serving</h2>
-                        <h1>Coffee</h1>
+                        <h1>Syntax Cafe</h1>
                         <h2>* SINCE 1950 *</h2>
+                        <p>Experience the perfect blend of tradition and innovation</p>
                     </div>
                 </div>
             </div>
-
-            <button class="carousel-button prev" id="prevBtn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="carousel-button next" id="nextBtn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
         </div>
 
 
@@ -74,13 +74,12 @@
     <div class="wrapper-about">     
         <div class="about-start">
             <div class="about-image">
-                <!-- <img src="/JS30Day/Final_Project/img/img/tuntung-removebg-preview.png" alt="Barista couple"> -->
                 <img src="/JS30Day/Final_Project/img/img/baista-removebg-preview.png" alt="Barista couple">
 
             </div>
             <div class="about-text">
-                <h1>“From the finest coffee beans, it gives warmth in every sip”</h1>
-                <p>Welcome to Dark Mode, your evening companion.</p>
+                <h1>"From the finest coffee beans, it gives warmth in every sip"</h1>
+                <p>Welcome to Syntax Cafe, where every cup tells a story.</p>
             </div>
         </div>
         <section class="about-darkmode">
@@ -175,67 +174,151 @@
 </div>
 <!-- service end -->
 
-<!-- order -->
+<!-- Menu Section -->
     <div class="order-wrapper">
         <div class="section-title">
-            <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Pricing</h4>
-            <h1 class="text-white display-4">Competitive Pricing</h1>
+            <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Menu</h4>
+            <h1 class="text-white display-4">Discover Our Delicious Offerings</h1>
+            <p style="color: #f8f6f2; font-size: 1.1rem; margin-top: 20px; opacity: 0.9;">
+                From classic coffee to innovative beverages and delicious food, we have something for everyone
+            </p>
         </div>
+        
         <div class="filter-buttons">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="drink">Drink</button>
-            <button class="filter-btn" data-category="food">Food</button>
-            <button class="filter-btn" data-category="snack">Cake</button>
+            <button class="filter-btn active" data-category="all">
+                <i class="fa-solid fa-utensils"></i> All Menu
+            </button>
+            <button class="filter-btn" data-category="drink">
+                <i class="fa-solid fa-mug-hot"></i> Beverages
+            </button>
+            <button class="filter-btn" data-category="food">
+                <i class="fa-solid fa-utensils"></i> Food
+            </button>
+            <button class="filter-btn" data-category="snack">
+                <i class="fa-solid fa-cake-candles"></i> Desserts
+            </button>
         </div>
 
-        <div class="menu-section" >
+        <div class="menu-section">
         <!-- Coffee Group -->
             <div class="menu-group" data-group="drink"> 
-                <div class="menu-title"> Coffee</div>
+                <div class="menu-title">
+                    <i class="fa-solid fa-mug-hot"></i> Coffee & Espresso
+                </div>
                 <div class="menu-grid">
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/americano.jpg" alt="">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/americano.jpg" alt="Americano Coffee">
+                            <div class="menu-item-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
                         <h4>Americano Coffee</h4>
-                        <p> 45.000 VND</p>
+                            <p class="menu-description">Classic espresso with hot water, bold and smooth</p>
+                            <div class="menu-price">45.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/capuchino.jpg" alt="">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/capuchino.jpg" alt="Cappuccino">
+                            <div class="menu-item-badge">Best Seller</div>
+                        </div>
+                        <div class="menu-item-content">
                         <h4>Cappuccino</h4>
-                        <p> 45.000 VND</p>
+                            <p class="menu-description">Perfect blend of espresso, steamed milk, and foam</p>
+                            <div class="menu-price">45.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/latte.webp" alt="">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/latte.webp" alt="Caffe Latte">
+                        </div>
+                        <div class="menu-item-content">
                         <h4>Caffe Latte</h4>
-                        <p> 45.000 VND</p>
+                            <p class="menu-description">Smooth espresso with creamy steamed milk</p>
+                            <div class="menu-price">45.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/ice coffe.jpg" alt="">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/ice coffe.jpg" alt="Palm Sugar Milk Coffee">
+                        </div>
+                        <div class="menu-item-content">
                         <h4>Palm Sugar Milk Coffee</h4>
-                        <p> 35.000 VND</p>
+                            <p class="menu-description">Vietnamese style with natural palm sugar sweetness</p>
+                            <div class="menu-price">35.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/esspresso.jpg" alt="">
-                        <h4>Espresso</h4>
-                        <p> 35.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="../img/img/ice green.jpg" alt="Ice Green Tea">
+                        </div>
+                        <div class="menu-item-content">
+                        <h4>Ice Green Tea</h4>
+                            <p class="menu-description">Refreshing green tea served with ice</p>
+                            <div class="menu-price">25.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/esspresso.jpg" alt="Espresso">
+                        </div>
+                        <div class="menu-item-content">
+                        <h4>Espresso</h4>
+                            <p class="menu-description">Pure coffee essence, intense and aromatic</p>
+                            <div class="menu-price">35.000 VND</div>
+                        <div class="menu-actions">
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -243,51 +326,122 @@
 
         <!-- Non-Coffee Group -->
             <div class="menu-group" data-group="drink">
-                <div class="menu-title"> Non-Coffee</div>
+                <div class="menu-title">
+                    <i class="fa-solid fa-leaf"></i> Tea & Special Drinks
+                </div>
                 <div class="menu-grid">
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/lemon.jpg" alt="">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/lemon.jpg" alt="Lemon Tea">
+                        </div>
+                        <div class="menu-item-content">
                         <h4>Lemon Tea</h4>
-                        <p> 15.000 VND</p>
+                            <p class="menu-description">Refreshing blend of black tea and fresh lemon</p>
+                            <div class="menu-price">15.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/tra-vai-tth.jpg" alt="">
+                        <div class="menu-item-image">
+                            <img src="../img/img/nước dâu.webp" alt="Strawberry Drink   ">
+                        </div>
+                        <div class="menu-item-content">
+                        <h4>Strawberry Drink</h4>
+                            <p class="menu-description">Refreshing blend of strawberry and black tea</p>
+                            <div class="menu-price">35.000 VND</div>
+                        <div class="menu-actions">
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/tra-vai-tth.jpg" alt="Lychee Tea">
+                        </div>
+                        <div class="menu-item-content">
                         <h4>Lychee Tea</h4>
-                        <p> 25.000 VND</p>
+                            <p class="menu-description">Sweet lychee flavor with premium tea leaves</p>
+                            <div class="menu-price">25.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/mattchalate.jpg" alt="">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/mattchalate.jpg" alt="Matcha Latte">
+                            <div class="menu-item-badge">New</div>
+                        </div>
+                        <div class="menu-item-content">
                         <h4>Matcha Latte</h4>
-                        <p> 35.000 VND</p>
+                            <p class="menu-description">Premium Japanese matcha with creamy milk</p>
+                            <div class="menu-price">35.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/latte red.jpg" alt="">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/latte red.jpg" alt="Red Velvet Latte">
+                        </div>
+                        <div class="menu-item-content">
                         <h4>Red Velvet Latte</h4>
-                        <p> 35.000 VND</p>
+                            <p class="menu-description">Unique red velvet flavor in latte form</p>
+                            <div class="menu-price">35.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/nước cam.avif" alt="">
-                        <h4>Orange Juce</h4>
-                        <p> 25.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/nước cam.avif" alt="Orange Juice">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Fresh Orange Juice</h4>
+                            <p class="menu-description">100% natural orange juice, freshly squeezed</p>
+                            <div class="menu-price">25.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -295,106 +449,246 @@
 
         <!-- Food Group -->
             <div class="menu-group" data-group="food">
-                <div class="menu-title"> Food</div>
+                <div class="menu-title">
+                    <i class="fa-solid fa-utensils"></i> Food & Snacks
+                </div>
                 <div class="menu-grid">
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/bánh mì.jpg" alt="">
-                        <h4>Bánh Mì</h4>
-                        <p> 55.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/bánh mì.jpg" alt="Bánh Mì">
+                            <div class="menu-item-badge">Local Favorite</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Vietnamese Bánh Mì</h4>
+                            <p class="menu-description">Traditional Vietnamese sandwich with fresh ingredients</p>
+                            <div class="menu-price">55.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/gà rán.jpg" alt="">
-                        <h4> Gà Rán</h4>
-                        <p> 65.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/gà rán.jpg" alt="Gà Rán">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Crispy Fried Chicken</h4>
+                            <p class="menu-description">Golden crispy chicken with special seasoning</p>
+                            <div class="menu-price">65.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/chân gà.jpg" alt="">
-                        <h4>Chân Gà xả tắc</h4>
-                        <p> 55.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/chân gà.jpg" alt="Chân Gà xả tắc">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Chicken Feet with Lemongrass</h4>
+                            <p class="menu-description">Spicy chicken feet with lemongrass and chili</p>
+                            <div class="menu-price">55.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/steak.webp" alt="">
-                        <h4>Steak</h4>
-                        <p> 60.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="../img/img/pizza.webp" alt="Pizza">
+                        </div>
+                        <div class="menu-item-content">
+                        <h4>Pizza</h4>
+                            <p class="menu-description">Delicious cheese pizza with fresh toppings</p>
+                            <div class="menu-price">75.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/bún bò.jpg" alt="">
-                        <h4>Bún Bò O Phương</h4>
-                        <p> 60.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/steak.webp" alt="Steak">
+                            <div class="menu-item-badge">Premium</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Grilled Beef Steak</h4>
+                            <p class="menu-description">Tender beef steak with herbs and spices</p>
+                            <div class="menu-price">60.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/bún bò.jpg" alt="Bún Bò">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Bún Bò Huế</h4>
+                            <p class="menu-description">Spicy beef noodle soup from Central Vietnam</p>
+                            <div class="menu-price">60.000 VND</div>
+                        <div class="menu-actions">
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-    <!-- cake Group -->
+            <!-- Desserts Group -->
             <div class="menu-group" data-group="snack">
-                <div class="menu-title"> Cake</div>
+                <div class="menu-title">
+                    <i class="fa-solid fa-cake-candles"></i> Desserts & Sweets
+                </div>
                 <div class="menu-grid">
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/pudding.webp" alt="">
-                        <h4>Pudding</h4>
-                        <p> 10.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/pudding.webp" alt="Pudding">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Classic Pudding</h4>
+                            <p class="menu-description">Smooth vanilla pudding with caramel sauce</p>
+                            <div class="menu-price">10.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/pudding chocolate.webp" alt="">
-                        <h4>Pudding chocolate</h4>
-                        <p> 12.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="../img/img/pudding dâu.webp" alt="Pudding">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Strawberry Pudding</h4>
+                            <p class="menu-description">Smooth strawberry pudding with fresh strawberries</p>
+                            <div class="menu-price">12.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/pudding xoài.webp" alt="">
-                        <h4>pudding mango</h4>
-                        <p> 15.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/pudding chocolate.webp" alt="Chocolate Pudding">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Chocolate Pudding</h4>
+                            <p class="menu-description">Rich chocolate pudding with cocoa powder</p>
+                            <div class="menu-price">12.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/pudding berry.webp" alt="">
-                        <h4>Pudding Dau</h4>
-                        <p> 15.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/pudding xoài.webp" alt="Mango Pudding">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Mango Pudding</h4>
+                            <p class="menu-description">Fresh mango pudding with tropical flavor</p>
+                            <div class="menu-price">15.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+
                     <div class="menu-item">
-                        <img src="/JS30Day/Final_Project/img/img/flan.webp" alt="">
-                        <h4>Flan</h4>
-                        <p> 15.000 VND</p>
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/pudding berry.webp" alt="Berry Pudding">
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Mixed Berry Pudding</h4>
+                            <p class="menu-description">Mixed berries pudding with fresh fruit</p>
+                            <div class="menu-price">15.000 VND</div>
                         <div class="menu-actions">
-                            <button class="btn-order">Order</button>
-                            <button class="btn-fav"><i class="fa-solid fa-heart"></i> Yêu thích</button>
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="/JS30Day/Final_Project/img/img/flan.webp" alt="Flan">
+                            <div class="menu-item-badge">Chef's Choice</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Caramel Flan</h4>
+                            <p class="menu-description">Smooth caramel flan with golden caramel sauce</p>
+                            <div class="menu-price">15.000 VND</div>
+                        <div class="menu-actions">
+                                <button class="btn-order">
+                                    <i class="fa-solid fa-shopping-cart"></i> Order Now
+                                </button>
+                                <button class="btn-fav">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -402,63 +696,74 @@
         </div>
     </div>
 
-    <!-- Reservation start -->
-     <div class="container-fluidl">
-        <div class="container-reservation">
-            <div class="reservation">
-                <div class="row-reservation">
-                    <div class="text-reservation">
-                        <h1 class="text-reser1">30% OFF</h1>
-                        <h1 class="text-reser2">For Online Reservation</h1>
-                    </div>
-                    <p class="text-reser3">
-                        Lorem justo clita erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea
-                    </p>
-                    <h5><i class="fa-solid fa-check "></i>Lorem ipsum dolor sit amet</h5>
-                    <h5><i class="fa-solid fa-check "></i>Lorem ipsum dolor sit amet</h5>
-                    <h5><i class="fa-solid fa-check "></i>Lorem ipsum dolor sit amet</h5>
-                </div>
-                <div class="form-reservation">
-                    <div class="form-content" style="background-color: rgba(52, 39, 29, 0.3);">
-                        <h1>Your book table</h1>
-                        <form  class="form-table">
-                            <div class="form-group">
-                                <input id="res-name" type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
+<!-- Reservation start -->
+<section class="book-table-section"> 
+    <div class="book-table-left">
+        <img src="../img/img/THE-VIBES-1.jpg" alt="Không gian quán">
+        <div class="offer"><i class="fa-solid fa-certificate"></i> 30% OFF Online Reservation</div>
+        <h2>Đặt bàn nhanh chóng</h2>
+        <p>Giữ chỗ lý tưởng cho buổi hẹn hò, gặp gỡ bạn bè hoặc làm việc tại không gian ấm cúng của chúng tôi.<br>Ưu đãi chỉ áp dụng khi đặt bàn online!</p>
+        <ul style="color:#7f5539; margin-top:10px; font-size:1rem;">
+            <li><i class="fa-solid fa-check"></i> Không gian sang trọng, riêng tư</li>
+            <li><i class="fa-solid fa-check"></i> Đặt bàn dễ dàng, xác nhận nhanh</li>
+            <li><i class="fa-solid fa-check"></i> Hỗ trợ sự kiện, sinh nhật, họp mặt</li>
+        </ul>
+    </div>
 
-                            <div class="form-group">
-                                <input id="res-email" type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input id=" res-date" type="date" class="form-control" placeholder="Date" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input  id=" res-time" type="time" class="form-control" placeholder="Time" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <select id="res-person" class="select-reservation">
-                                    <option selected>Chọn bàn</option>
-                                    <option value="1">Bàn 1 - Gần cửa sổ</option>
-                                    <option value="2">Bàn 2 - Ngoài ban công</option>
-                                    <option value="3">Bàn 3 - Phòng Vip</option>
-                                    <option value="4">Bàn 4</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <button class="btn-reservation" type="submit">Book now</button>
-                            </div>
-                        </form>
-                        <div id="success-message" class="popup-success"><i class="fa-solid fa-check"></i> Đặt bàn thành công! Chúng tôi sẽ liên hệ sớm.</div>
-                    </div>
-                </div>
+    <div class="book-table-right">
+        <div class="form-title"><i class="fa-solid fa-calendar-check"></i> Đặt bàn ngay</div>
+        <form class="form-table">
+            <div class="form-group">
+                <label for="res-name"><i class="fa-solid fa-user"></i> Họ và tên *</label>
+                <input id="res-name" type="text" class="form-control" placeholder="Nhập họ tên" required>
             </div>
-        </div>
-     </div>
+            <div class="form-group">
+                <label for="res-phone"><i class="fa-solid fa-phone"></i> Số điện thoại *</label>
+                <input id="res-phone" type="tel" class="form-control" placeholder="Nhập số điện thoại" required pattern="[0-9]{9,11}">
+            </div>
+            <div class="form-group">
+                <label for="res-email"><i class="fa-solid fa-envelope"></i> Email *</label>
+                <input id="res-email" type="email" class="form-control" placeholder="Nhập email" required>
+            </div>
+            <div class="form-group">
+                <label for="res-date"><i class="fa-solid fa-calendar-day"></i> Ngày *</label>
+                <input id="res-date" type="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="res-time"><i class="fa-solid fa-clock"></i> Giờ *</label>
+                <input id="res-time" type="time" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="res-guest"><i class="fa-solid fa-users"></i> Số lượng khách *</label>
+                <select id="res-guest" class="select-reservation" required>
+                    <option value="">Chọn số lượng</option>
+                    <option value="1">1 người</option>
+                    <option value="2">2 người</option>
+                    <option value="3">3 người</option>
+                    <option value="4">4 người</option>
+                    <option value="5">5 người</option>
+                    <option value="6+">6+ người</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="res-area"><i class="fa-solid fa-chair"></i> Khu vực bàn *</label>
+                <select id="res-area" class="select-reservation" required>
+                    <option value="">Chọn khu vực</option>
+                    <option value="window">Gần cửa sổ</option>
+                    <option value="balcony">Ngoài ban công</option>
+                    <option value="vip">Phòng VIP</option>
+                    <option value="main">Sảnh chính</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="res-note"><i class="fa-solid fa-pen"></i> Ghi chú (tuỳ chọn)</label>
+                <textarea id="res-note" class="form-control" placeholder="Yêu cầu đặc biệt, dị ứng, sự kiện..."></textarea>
+            </div>
+            <button class="btn-reservation" type="submit"><i class="fa-solid fa-paper-plane"></i> Đặt bàn</button>
+        </form>
+        <div id="success-message" class="popup-success"><i class="fa-solid fa-check"></i> Đặt bàn thành công! Chúng tôi sẽ liên hệ sớm.</div>
+    </div>
+</section>
 <!-- Reservation end -->
 
 <!-- Đánh giá -->
@@ -524,9 +829,6 @@
 
 <!-- Footer Start -->
     <footer>
-        <div class="overlay-top">
-            <img src="/JS30Day/Final_Project/img/img/overlay-top.png" alt="overlay-top" class="top" style="width: 100%;">
-        </div>
         <div class="footer-info">
             <div class="fotter-item1 footer-item">
                 <h4 class="text-uppercase">Get in touch</h4>
@@ -565,7 +867,6 @@
                     <button class="btn-footer" type="submit">Sign Up</button>
                 </div>
             </div>
-
         </div>
 
         <div class="footer-end" style="border-color: rgba(256, 256, 256, .1) !important;">
@@ -575,8 +876,9 @@
     </footer>
 <!-- Footer End -->
     
-    <script src="/JS30Day/Final_Project/js/main.js"></script>
+    <script src="../js/main.js"></script>
     <script src="../js/menu.js"></script>
+    <script src="../js/book-table.js"></script>
 </body>
 </html>
    

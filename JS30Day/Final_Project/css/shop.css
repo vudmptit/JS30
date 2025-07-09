@@ -5,10 +5,10 @@ body {
 }
 
 nav {
-    background-color: #b08968 !important;
-    color: #fff;
+    background-color: #b08968;
     box-shadow: 0 2px 8px rgba(186, 133, 80, 0.13);
     position:relative   !important;
+    color: #fff !important;
 }
 
 .cart-img {
@@ -61,4 +61,57 @@ button:hover {
     background: linear-gradient(90deg, #a66431 60%, #b08968 100%);
     box-shadow: 0 6px 16px rgba(186, 133, 80, 0.18);
     transform: translateY(-2px) scale(1.03);
+}
+
+.booking-latest-box {
+    background: #fffdf8;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(186, 133, 80, 0.10);
+    padding: 24px 32px;
+    margin-bottom: 24px;
+    color: #222;
+    border: 1px solid #e7dacb;
+    text-align: left;
+    max-width: 100%;
+    transition: box-shadow 0.3s;
+}
+.booking-latest-box:hover {
+    box-shadow: 0 8px 32px rgba(186, 133, 80, 0.18);
+}
+.booking-latest-box h2 {
+    color: #b08968;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+}
+.booking-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.booking-info-list li {
+    padding: 6px 0;
+    font-size: 1.08rem;
+    border-bottom: 1px solid #f3e7d7;
+}
+.booking-info-list li:last-child {
+    border-bottom: none;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(44,24,16,0.08);
+}
+.back-btn:hover {
+    background: #388e3c;
+    color: #fff;
 }

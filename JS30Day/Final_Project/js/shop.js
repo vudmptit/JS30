@@ -1,11 +1,26 @@
 window.addEventListener("DOMContentLoaded", () => {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    // Lấy tên người dùng đã đăng nhập
+    const username = localStorage.getItem("userLoggedIn") || "guest";
+    const cartKey = `cart_${username}`;
+    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    
     const container = document.getElementById("cart-container");
-    const checkoutBtn = document.getElementById("checkout-btn"); // Lấy nút thanh toán
+    const checkoutBtn = document.getElementById("checkout-btn");
+
+    function updateCartBadgeShop() {
+        const badge = document.getElementById('cart-badge');
+        if (badge) {
+            const total = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            badge.textContent = total;
+            badge.classList.add('animate');
+            setTimeout(() => badge.classList.remove('animate'), 400);
+        }
+    }
 
     function saveCart() {
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem(cartKey, JSON.stringify(cart));
         renderCart();
+        updateCartBadgeShop();
     }
 
     function removeItem(index) {
@@ -25,13 +40,12 @@ window.addEventListener("DOMContentLoaded", () => {
     function renderCart() {
         if (cart.length === 0) {
             container.innerHTML = "<p>Chưa có sản phẩm nào trong giỏ hàng.</p>";
-            checkoutBtn.style.display = 'none'; // Ẩn nút thanh toán nếu giỏ hàng trống
+            checkoutBtn.style.display = 'none';
             return;
         } else {
-            checkoutBtn.style.display = 'block'; // Hiển thị nút thanh toán nếu có sản phẩm
+            checkoutBtn.style.display = 'block';
         }
 
-        // Tạo bảng HTML
         let tableHTML = `
             <table class="cart-table">
                 <thead>
@@ -52,22 +66,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
         cart.forEach((item, index) => {
             const quantity = item.quantity || 1;
-            const itemPrice = parseFloat(item.price.replace(/[^0-9]/g, '')) || 0; // Chỉ giữ lại số
+            const itemPrice = Number(item.price);
 
-            const formattedItemPrice = new Intl.NumberFormat('vi-VN', {
-                style: 'decimal',
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0
-            }).format(itemPrice);
-
+            const formattedItemPrice = new Intl.NumberFormat('vi-VN').format(itemPrice);
             const totalItemPrice = itemPrice * quantity;
-
-            const formattedTotalItemPrice = new Intl.NumberFormat('vi-VN', {
-                style: 'decimal',
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0
-            }).format(totalItemPrice);
-
+            const formattedTotalItemPrice = new Intl.NumberFormat('vi-VN').format(totalItemPrice);
 
             totalCartPrice += totalItemPrice;
 
@@ -83,19 +86,12 @@ window.addEventListener("DOMContentLoaded", () => {
                         <button class="quantity-btn" data-index="${index}" data-delta="1">+</button>
                     </td>
                     <td>${formattedTotalItemPrice} VNĐ</td>
-                    <td>
-                        <button class="remove-btn" data-index="${index}">Xóa</button>
-                    </td>
+                    <td><button class="remove-btn" data-index="${index}">Xóa</button></td>
                 </tr>
             `;
         });
 
-        const formattedTotalCartPrice = new Intl.NumberFormat('vi-VN', {
-            style: 'decimal',
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0
-        }).format(totalCartPrice);
-
+        const formattedTotalCartPrice = new Intl.NumberFormat('vi-VN').format(totalCartPrice);
 
         tableHTML += `
                 </tbody>
@@ -111,7 +107,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
         container.innerHTML = tableHTML;
 
-        // Add event listeners for buttons
         document.querySelectorAll(".remove-btn").forEach(button => {
             button.addEventListener("click", (event) => {
                 const index = event.target.dataset.index;
@@ -126,23 +121,49 @@ window.addEventListener("DOMContentLoaded", () => {
                 changeQuantity(index, delta);
             });
         });
+
+        updateCartBadgeShop();
     }
 
-    // Event listener cho nút thanh toán
+    // Chỉnh sửa: Chuyển hướng đến trang checkout 
     checkoutBtn.addEventListener("click", () => {
         if (cart.length > 0) {
-            // Hiển thị thông báo thanh toán thành công
-            alert("Thanh toán thành công! Cảm ơn bạn đã mua hàng.");
-
-            // Xóa hết giỏ hàng
-            cart = [];
-
-            // Cập nhật localStorage và render lại giao diện giỏ hàng
-            saveCart();
+            // Kiểm tra đăng nhập trước khi thanh toán
+            if (username === "guest") {
+                // Lưu thông tin chuyển hướng để sau khi đăng nhập sẽ quay lại trang checkout
+                localStorage.setItem("redirectAfterLogin", "checkout.html");
+                alert("Bạn cần đăng nhập để thanh toán.");
+                window.location.href = "SignIn.html";
+                return;
+            }
+            // Chuyển hướng đến trang checkout
+            window.location.href = "checkout.html";
         } else {
             alert("Giỏ hàng của bạn đang trống!");
         }
     });
 
     renderCart();
+    updateCartBadgeShop();
+
+    // Hiển thị thông tin đặt bàn mới nhất nếu có (theo user)
+    const latestBookingDiv = document.getElementById('latest-booking');
+    const latestBooking = localStorage.getItem(`bookingLatest_${username}`);
+    if (latestBookingDiv && latestBooking) {
+        const info = JSON.parse(latestBooking);
+        latestBookingDiv.innerHTML = `
+            <div class="booking-latest-box">
+                <h2>Đặt bàn gần nhất của bạn</h2>
+                <ul class="booking-info-list">
+                    <li><strong>Họ tên:</strong> ${info.name}</li>
+                    <li><strong>Số điện thoại:</strong> ${info.phone}</li>
+                    <li><strong>Email:</strong> ${info.email}</li>
+                    <li><strong>Ngày:</strong> ${info.date}</li>
+                    <li><strong>Giờ:</strong> ${info.time}</li>
+                    <li><strong>Số khách:</strong> ${info.guest}</li>
+                    <li><strong>Khu vực:</strong> ${info.area}</li>
+                </ul>
+            </div>
+        `;
+    }
 });

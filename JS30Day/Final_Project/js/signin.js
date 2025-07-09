@@ -20,32 +20,30 @@ function handleSignIn() {
         localStorage.setItem("rememberEmail", email);    // Lưu lại email
         localStorage.setItem("rememberPassword", pass);  // Lưu lại mật khẩu
     } else {
-        // Nếu không tích → xóa thông tin ghi nhớ
+    // Nếu không tích → xóa thông tin ghi nhớ
         localStorage.removeItem("rememberEmail");
         localStorage.removeItem("rememberPassword");
     }
 
-    // Lưu trạng thái đăng nhập (để kiểm tra ở trang home)
-    localStorage.setItem("loggedInUser", email);
+    // Lưu trạng thái đăng nhập (đồng bộ với các file khác)
+    localStorage.setItem("userLoggedIn", email);
 
     // Hiển thị thông báo đăng nhập thành công
     msg.style.color = "lightgreen";
     msg.textContent = " Đăng nhập thành công! Đang chuyển...";
 
-    // Sau 2 giây, chuyển sang trang home
+    // Kiểm tra xem có cần chuyển hướng đến trang checkout không
+    const redirectTo = localStorage.getItem("redirectAfterLogin");
+    let targetPage = "home.html"; // Trang mặc định (đường dẫn tương đối)
+    
+    if (redirectTo) {
+        // Nếu có thông tin chuyển hướng, sử dụng nó
+        targetPage = redirectTo;
+        localStorage.removeItem("redirectAfterLogin"); // Xóa thông tin chuyển hướng
+    }
+
+    // Sau 2 giây, chuyển sang trang đích
     setTimeout(() => {
-        window.location.href = "/JS30Day/Final_Project/html/home.html";
+        window.location.href = targetPage;
     }, 2000);
 }
-
-
-    // function handleSignIn() {
-    //     const btn = document.querySelector(".btn");
-    //     btn.classList.add("loading");
-
-    //     // xử lý...
-
-    //     setTimeout(() => {
-    //         btn.classList.remove("loading");
-    //     }, 2000);
-    // }

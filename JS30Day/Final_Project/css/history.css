@@ -1,0 +1,127 @@
+.history-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f6f2;
+    min-height: 100vh;
+}
+
+.history-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #b08968;
+}
+
+.history-actions {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.clear-btn {
+    padding: 10px 20px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.clear-btn:hover {
+    background: #c82333;
+}
+
+.history-table {
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-collapse: collapse;
+}
+
+.history-table th {
+    background: #b08968;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.history-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.history-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.print-btn {
+    padding: 8px 15px;
+    background: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.print-btn:hover {
+    background: #138496;
+}
+
+.order-info {
+    margin-bottom: 10px;
+}
+
+.order-info div {
+    margin-bottom: 5px;
+}
+
+.order-info strong {
+    color: #b08968;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background: #5a6268;
+}
+
+.empty-history {
+    text-align: center;
+    padding: 50px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.empty-history i {
+    font-size: 48px;
+    color: #b08968;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .history-table {
+        font-size: 14px;
+    }
+    
+    .history-table th,
+    .history-table td {
+        padding: 10px;
+    }
+}

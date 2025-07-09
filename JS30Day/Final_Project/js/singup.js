@@ -1,6 +1,5 @@
 function validateEmail(email) {
     // Hàm kiểm tra định dạng email hợp lệ bằng biểu thức chính quy (RegEx)
-    // Mẫu này: ký tự chữ/số + @ + domain + . + phần mở rộng (vd: user@example.com)
     return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 }
 function handleSignUp() {
@@ -41,16 +40,5 @@ function handleSignUp() {
 
     //  Chuyển hướng sang trang đăng nhập
     window.location.href = "SignIn.html";
-}
-
-function handleSignIn() {
-    const btn = document.querySelector(".btn");
-    btn.classList.add("loading");
-
-    // xử lý...
-
-    setTimeout(() => {
-        btn.classList.remove("loading");
-    }, 2000);
 }
 

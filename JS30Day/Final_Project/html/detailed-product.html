@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shopping</title>
-    <link rel="stylesheet" href="../css/shop.css">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="../css/detailed.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -19,7 +21,7 @@
                     <li><a href="home.html" class="nav-item">Home</a></li>
                     <li><a href="about.html" class="nav-item">About</a></li>
                     <li><a href="book-table.html" class="nav-item">Book Table</a></li>
-                    <li><a href="menu.html" class="nav-item">Menu</a></li>
+                    <li><a href="menu.html" class="nav-item active">Menu</a></li>
                     <li><a href="contact.html" class="nav-item">Contact</a></li>
                 </ul> 
             </div>
@@ -33,12 +35,6 @@
                     <span class="cart-text"></span>
                </a>
             </div>
-            <div class="navbar-history">
-                <a href="history.html" class="history-link">
-                    <i class="fa-solid fa-history"></i>
-                    <span>Lịch sử</span>
-                </a>
-            </div>
             <div class="logout">
                 <button id="logout-btn" class="logout-button">
                     <i class="fa-solid fa-user-tie"></i>
@@ -46,20 +42,27 @@
                 </button>
             </div>
         </nav>
-    </header>   
-
-    <!--nav  -->
-    <h1 style="text-align:center;">Giỏ hàng của bạn</h1>
-    <div id="latest-booking" style="max-width: 600px; margin: 0 auto 24px auto;"></div>
-    <div id="cart-container"></div>
-    <div style="text-align: center; margin-top: 20px; display: flex; justify-content: center; gap: 16px; align-items: center;">
-        <a href="menu.html" class="back-btn" style="margin-bottom:0;">
-            <i class="fas fa-arrow-left"></i> Quay lại menu
-        </a>
-        <button id="checkout-btn" style="padding: 10px 20px; font-size: 18px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Thanh toán</button>
-    </div>
-    <script src="../js/shop.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
-</body> 
+    </header>
+    <main style="margin-top: 120px;">
+      <div id="product-detail-content"></div>
+      <div class="review-section">
+        <h3>Đánh giá & Bình luận</h3>
+        <div class="star-input">
+          <label>Chọn sao: </label>
+          <select id="review-stars">
+            <option value="5">⭐⭐⭐⭐⭐ - Rất ngon</option>
+            <option value="4">⭐⭐⭐⭐ - Ngon</option>
+            <option value="3">⭐⭐⭐ - Bình thường</option>
+            <option value="2">⭐⭐ - Không thích</option>
+            <option value="1">⭐ - Tệ</option>
+          </select>
+        </div>
+        <textarea id="review-comment" placeholder="Viết nhận xét của bạn..." rows="3"></textarea>
+        <button id="submit-review">Gửi đánh giá</button>
+        <h4>📋 Nhận xét từ khách hàng:</h4>
+        <div id="review-list">Chưa có đánh giá nào.</div>
+      </div>
+    </main>
+    <script src="../js/detailed-product.js"></script>
+</body>
 </html>
