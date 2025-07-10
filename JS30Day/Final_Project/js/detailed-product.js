@@ -30,9 +30,40 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="product-price">${product.price.toLocaleString('vi-VN')} VND</div>
         <div class="product-desc">${product.desc}</div>
         <div class="product-rating">Đánh giá trung bình: <span style="color:#d19151;font-weight:600;">${avgRating}</span> ${starHtml} (${reviews.length} đánh giá)</div>
+        <button id="add-to-cart-btn" class="btn-order" style="margin-top: 20px; padding: 12px 24px; background: linear-gradient(90deg, #b08968 60%, #d19151 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
       </div>
     </div>
   `;
+
+  // Thêm sự kiện cho nút thêm vào giỏ hàng
+  document.getElementById("add-to-cart-btn").addEventListener("click", function() {
+    const username = localStorage.getItem("userLoggedIn") || "guest";
+    const cartKey = `cart_${username}`;
+    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    
+    let found = false;
+    for (let item of cart) {
+      if (item.name === product.name && item.price === product.price && item.img === product.img) {
+        item.quantity = (item.quantity || 1) + 1;
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      cart.push({ 
+        name: product.name, 
+        price: product.price, 
+        img: product.img, 
+        quantity: 1 
+      });
+    }
+
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+    alert("Đã thêm vào giỏ hàng!");
+  });
 
   renderReviews(productId);
 

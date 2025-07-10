@@ -82,7 +82,7 @@ function updateUserInfo() {
 document.getElementById("logout-btn").addEventListener("click", function () {
   // Đồng bộ với key userLoggedIn thay vì loggedInUser
   localStorage.removeItem("userLoggedIn");
-  window.location.href = "/JS30Day/Final_Project/html/SignIn.html";
+  window.location.href = "SignIn.html";
 });
 
 // === Back to Top Button ===

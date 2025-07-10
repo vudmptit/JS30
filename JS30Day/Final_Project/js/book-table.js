@@ -1,7 +1,3 @@
-// Logic xử lý form đặt bàn cho trang Book Table
-// Author: AI Assistant
-// Giữ lại comment giải thích để dễ bảo trì
-
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.form-table');
     const nameInput = document.getElementById('res-name');
@@ -47,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const time = timeInput.value;
             const guest = guestSelect.value;
             const area = areaSelect.value;
-            // const note = noteInput.value.trim(); // Ghi chú không bắt buộc
-
+            
             // Kiểm tra dữ liệu đầu vào
             if (!name || !phone || !email || !date || !time || !guest || !area) {
                 alert('Vui lòng điền đầy đủ thông tin bắt buộc!');
@@ -69,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 dateInput.focus();
                 return;
             }
-            // Có thể thêm kiểm tra giờ hợp lệ ở đây nếu muốn
 
             // Hiển thị popup xác nhận
             if (successPopup) {
@@ -78,24 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     successPopup.style.display = 'none';
                 }, 2500);
             }
-            // Lưu thông tin đặt bàn mới nhất và lịch sử cho từng user vào localStorage
-            const username = localStorage.getItem('userLoggedIn') || 'guest';
-            const bookingInfo = {
-                name,
-                phone,
-                email,
-                date,
-                time,
-                guest,
-                area,
-                createdAt: new Date().toISOString()
-            };
-            // Lưu latest
-            localStorage.setItem(`bookingLatest_${username}`, JSON.stringify(bookingInfo));
-            // Lưu lịch sử
-            let history = JSON.parse(localStorage.getItem(`bookingHistory_${username}`)) || [];
-            history.push(bookingInfo);
-            localStorage.setItem(`bookingHistory_${username}`, JSON.stringify(history));
             // Reset form
             form.reset();
         });

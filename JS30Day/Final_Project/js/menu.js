@@ -1,4 +1,3 @@
-
 // ==== LỌC MENU THEO LOẠI ==== //
 const filterButtons = document.querySelectorAll(".filter-btn");
 const menuGroups = document.querySelectorAll(".menu-group");
@@ -48,23 +47,11 @@ function showToast(message) {
   setTimeout(() => toast.style.opacity = '0', 1800);
 }
 
-// === Lấy giỏ hàng theo user đã đăng nhập ===
-function getCurrentUserCart() {
-  const username = localStorage.getItem("userLoggedIn") || "guest";
-  const cartKey = `cart_${username}`;
-  return JSON.parse(localStorage.getItem(cartKey)) || [];
-}
-
-// === Lưu giỏ hàng theo user đã đăng nhập ===
-function saveCurrentUserCart(cart) {
-  const username = localStorage.getItem("userLoggedIn") || "guest";
-  const cartKey = `cart_${username}`;
-  localStorage.setItem(cartKey, JSON.stringify(cart));
-}
-
 // === Tính tổng số lượng sản phẩm trong giỏ và hiển thị trên badge ===
 function getCartTotalQuantity() {
-  const cart = getCurrentUserCart();
+  const username = localStorage.getItem("userLoggedIn") || "guest";
+  const cartKey = `cart_${username}`;
+  const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
   return cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
 }
 
@@ -82,7 +69,10 @@ function setupOrderButtons() {
   document.querySelectorAll('.btn-order').forEach(btn => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
-      let cart = getCurrentUserCart();
+      const username = localStorage.getItem("userLoggedIn") || "guest";
+      const cartKey = `cart_${username}`;
+      let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+      
       const itemElem = btn.closest('.menu-item');
       const name = itemElem.querySelector('h4')?.textContent || 'Unknown Item';
       const priceElem = btn.closest('.menu-item-content')?.querySelector('.menu-price');
@@ -104,7 +94,7 @@ function setupOrderButtons() {
         cart.push({ name, price, img, quantity: 1 });
       }
 
-      saveCurrentUserCart(cart);
+      localStorage.setItem(cartKey, JSON.stringify(cart));
       const totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
       updateCartBadge(totalQuantity);
       showToast("Đã thêm vào giỏ hàng!");
@@ -122,33 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       btn.classList.toggle('active');
-    });
-  });
-
-  // Thêm sự kiện click vào từng sản phẩm để chuyển sang trang chi tiết
-  document.querySelectorAll('.menu-item').forEach((item, idx) => {
-    item.style.cursor = 'pointer';
-    item.addEventListener('click', function (e) {
-      // Không chuyển trang nếu click vào nút order hoặc fav
-      if (e.target.closest('.btn-order') || e.target.closest('.btn-fav')) return;
-      // Lấy thông tin sản phẩm
-      const name = item.querySelector('h4')?.textContent || '';
-      const priceElem = item.querySelector('.menu-price');
-      const priceText = priceElem?.textContent || '0 VND';
-      const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 0;
-      const img = item.querySelector('img')?.src || '';
-      const desc = item.querySelector('.menu-description')?.textContent || '';
-      // Lưu thông tin sản phẩm vào localStorage (danh sách tạm)
-      let products = JSON.parse(localStorage.getItem('menuProducts')) || [];
-      // Kiểm tra đã có chưa
-      let foundIdx = products.findIndex(p => p.name === name && p.price === price && p.img === img);
-      if (foundIdx === -1) {
-        products.push({ name, price, img, desc });
-        foundIdx = products.length - 1;
-      }
-      localStorage.setItem('menuProducts', JSON.stringify(products));
-      // Chuyển sang trang chi tiết, truyền index
-      window.location.href = `detailed-product.html?id=${foundIdx}`;
     });
   });
 });
@@ -176,7 +139,7 @@ function animateMenuItems() {
 const filterBtns = document.querySelectorAll('.filter-btn');
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    setTimeout(animateMenuItems, 0);
+    setTimeout(animateMenuItems, 80);
   });
 });
 
