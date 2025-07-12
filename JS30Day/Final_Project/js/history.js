@@ -1,27 +1,22 @@
 // history.js - Hiển thị lịch sử đơn hàng và in hóa đơn
 document.addEventListener("DOMContentLoaded", function () {
-  // Kiểm tra đăng nhập
   const username = localStorage.getItem('userLoggedIn');
   
   if (!username) {
-    // Nếu chưa đăng nhập, chuyển hướng về trang đăng nhập
     alert('Vui lòng đăng nhập để xem lịch sử đơn hàng!');
     window.location.href = 'SignIn.html';
     return;
   }
 
-  // Cập nhật thông tin user trong navbar
   const greetingElement = document.querySelector(".navbar-greeting span");
   if (greetingElement) {
     const displayName = username.split('@')[0];
     greetingElement.textContent = `Xin chào, ${displayName}!`;
   }
 
-  // Lấy lịch sử chỉ của user đang đăng nhập
   const bookingHistory = JSON.parse(localStorage.getItem(`bookingHistory_${username}`)) || [];
   const orderHistory = JSON.parse(localStorage.getItem(`orderHistory_${username}`)) || [];
 
-  // Lấy phần tử chứa lịch sử
   const container = document.getElementById("history-container");
   if (!container) {
     console.error("Thiếu phần tử #history-container trong HTML.");

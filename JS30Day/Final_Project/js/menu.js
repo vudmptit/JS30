@@ -19,7 +19,6 @@ filterButtons.forEach(button => {
     });
 });
 
-// === Xử lý lỗi ảnh ===
 function handleImageError(img) {
     img.onerror = null;
     img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0xNTAgNjBDMTE4IDYwIDkyIDg2IDkyIDExOEM5MiAxMzAgOTggMTQxIDEwOCAxNDhDOTggMTU1IDkyIDE2NiA5MiAxNzhDOTIgMjEwIDExOCAyMzYgMTUwIDIzNkMxODIgMjM2IDIwOCAyMTAgMjA4IDE3OEMyMDggMTY2IDIwMiAxNTUgMTkyIDE0OEMyMDIgMTQxIDIwOCAxMzAgMjA4IDExOEMyMDggODYgMTgyIDYwIDE1MCA2MFoiIGZpbGw9IiNCMDg5NjgiLz4KPHBhdGggZD0iTTE1MCAxMjBDMTYyIDEyMCAxNzIgMTMwIDE3MiAxNDJDMTcyIDE1NCAxNjIgMTY0IDE1MCAxNjRDMTM4IDE2NCAxMjggMTU0IDEyOCAxNDJDMTI4IDEzMCAxMzggMTIwIDE1MCAxMjBaIiBmaWxsPSIjRDE5MTE0Ii8+Cjwvc3ZnPgo=';
@@ -28,7 +27,6 @@ function handleImageError(img) {
     img.style.backgroundColor = '#f8f6f2';
 }
 
-// Áp dụng xử lý lỗi ảnh cho tất cả ảnh sản phẩm
 document.addEventListener('DOMContentLoaded', () => {
     const productImages = document.querySelectorAll('.menu-item img');
     productImages.forEach(img => {
@@ -97,23 +95,25 @@ function setupOrderButtons() {
       console.log(" Giá lấy được:", priceText, "→", price);
       const img = itemElem.querySelector('img')?.src || '';
 
-      let found = false;
-      for (let item of cart) {
-        if (item.name === name && item.price === price && item.img === img) {
-          item.quantity = (item.quantity || 1) + 1;
-          found = true;
-          break;
-        }
-      }
-
-      if (!found) {
+      // Tìm sản phẩm đã tồn tại trong giỏ hàng
+      let existingItem = cart.find(item => 
+        item.name === name && 
+        item.price === price
+      );
+      
+      if (existingItem) {
+        // Nếu sản phẩm đã tồn tại, tăng số lượng
+        existingItem.quantity = (existingItem.quantity || 1) + 1;
+        showToast(`Đã tăng số lượng ${name} lên ${existingItem.quantity}!`);
+      } else {
+        // Nếu sản phẩm chưa có, thêm mới
         cart.push({ name, price, img, quantity: 1 });
+        showToast("Đã thêm vào giỏ hàng!");
       }
 
       localStorage.setItem(cartKey, JSON.stringify(cart));
       const totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
       updateCartBadge(totalQuantity);
-      showToast("Đã thêm vào giỏ hàng!");
     });
   });
 }

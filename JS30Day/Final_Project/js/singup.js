@@ -7,7 +7,6 @@ function handleSignUp() {
     const confirm = document.getElementById("signup-confirm").value;      
     const msg = document.getElementById("signup-message");                
 
-    // Kiểm tra định dạng email hợp lệ
     if (!validateEmail(email)) {
         msg.textContent = "Email không đúng định dạng!";
         return;

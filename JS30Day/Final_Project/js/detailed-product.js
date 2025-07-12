@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cập nhật badge khi trang load
   updateCartBadge();
 
-  // Mảng sản phẩm cố định
   const products = [
     // Coffee & Espresso
     {
@@ -204,7 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const productId = parseInt(params.get("id"));
   const product = products[productId];
 
-  // Kiểm tra sản phẩm tồn tại
   if (!product || productId < 0 || productId >= products.length) {
     container.innerHTML = `
       <div style="text-align: center; padding: 40px;">
@@ -251,29 +249,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartKey = `cart_${username}`;
     let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
     
-    let found = false;
-    for (let item of cart) {
-      if (item.name === product.name && item.price === product.price && item.img === product.img) {
-        item.quantity = (item.quantity || 1) + 1;
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
+    // Tìm sản phẩm đã tồn tại trong giỏ hàng
+    let existingItem = cart.find(item => 
+      item.name === product.name && 
+      item.price === product.price
+    );
+    
+    if (existingItem) {
+      // Nếu sản phẩm đã tồn tại, tăng số lượng
+      existingItem.quantity = (existingItem.quantity || 1) + 1;
+      showToast(`Đã tăng số lượng ${product.name} lên ${existingItem.quantity}!`);
+    } else {
+      // Nếu sản phẩm chưa có, thêm mới
       cart.push({ 
         name: product.name, 
         price: product.price, 
         img: product.img, 
         quantity: 1 
       });
+      showToast("Đã thêm vào giỏ hàng!");
     }
 
     localStorage.setItem(cartKey, JSON.stringify(cart));
-    
-    // Cập nhật badge và hiển thị toast
     updateCartBadge();
-    showToast("Đã thêm vào giỏ hàng!");
     
     // Hiệu ứng button
     const btn = this;
@@ -354,19 +352,3 @@ function renderReviews(productId) {
     `;
   }).join("");
 }
-
-// Thêm CSS animation
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-`;
-document.head.appendChild(style);

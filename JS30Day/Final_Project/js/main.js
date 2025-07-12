@@ -6,7 +6,6 @@ if (track) {
   const intervalTime = 4000;
   let autoSlide;
 
-  // Tạo clone slide đầu và cuối để tạo hiệu ứng vô hạn
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[slides.length - 1].cloneNode(true);
   firstClone.id = "first-clone";
