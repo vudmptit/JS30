@@ -10,18 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const noteInput = document.getElementById('res-note');
     const successPopup = document.getElementById('success-message');
 
-    // Ẩn popup khi load trang
     if (successPopup) successPopup.style.display = 'none';
 
-    // Hàm kiểm tra email hợp lệ
     function isValidEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
-    // Hàm kiểm tra số điện thoại hợp lệ
     function isValidPhone(phone) {
         return /^\d{9,11}$/.test(phone);
     }
-    // Hàm kiểm tra ngày không phải quá khứ và không quá 1 tuần
     function isValidDate(dateStr) {
         const today = new Date();
         today.setHours(0,0,0,0);
@@ -35,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            // Lấy giá trị các trường
             const name = nameInput.value.trim();
             const phone = phoneInput.value.trim();
             const email = emailInput.value.trim();
@@ -43,8 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const time = timeInput.value;
             const guest = guestSelect.value;
             const area = areaSelect.value;
-            
-            // Kiểm tra dữ liệu đầu vào
             if (!name || !phone || !email || !date || !time || !guest || !area) {
                 alert('Vui lòng điền đầy đủ thông tin bắt buộc!');
                 return;
@@ -65,14 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Hiển thị popup xác nhận
             if (successPopup) {
                 successPopup.style.display = 'block';
                 setTimeout(() => {
                     successPopup.style.display = 'none';
                 }, 2500);
             }
-            // Reset form
             form.reset();
         });
     }

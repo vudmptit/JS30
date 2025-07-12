@@ -146,6 +146,13 @@ body {
     height: 100%;
     object-fit: cover;
     transition: all 0.3s ease;
+    object-position: center;
+}
+
+.menu-item-image img[src*="data:image/svg+xml"] {
+    object-fit: contain;
+    background-color: #f8f6f2;
+    padding: 20px;
 }
 
 .menu-item:hover .menu-item-image img {

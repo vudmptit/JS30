@@ -125,18 +125,16 @@ window.addEventListener("DOMContentLoaded", () => {
         updateCartBadgeShop();
     }
 
-    // Chỉnh sửa: Chuyển hướng đến trang checkout 
     checkoutBtn.addEventListener("click", () => {
         if (cart.length > 0) {
             // Kiểm tra đăng nhập trước khi thanh toán
             if (username === "guest") {
-                // Lưu thông tin chuyển hướng để sau khi đăng nhập sẽ quay lại trang checkout
                 localStorage.setItem("redirectAfterLogin", "checkout.html");
                 alert("Bạn cần đăng nhập để thanh toán.");
                 window.location.href = "SignIn.html";
                 return;
             }
-            // Chuyển hướng đến trang checkout
+ 
             window.location.href = "checkout.html";
         } else {
             alert("Giỏ hàng của bạn đang trống!");

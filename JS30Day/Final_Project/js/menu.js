@@ -4,7 +4,6 @@ const menuGroups = document.querySelectorAll(".menu-group");
 
 filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-        // Cập nhật class active
         filterButtons.forEach(btn => btn.classList.remove("active"));
         button.classList.add("active");
 
@@ -17,6 +16,23 @@ filterButtons.forEach(button => {
                 group.style.display = "none";
             }
         });
+    });
+});
+
+// === Xử lý lỗi ảnh ===
+function handleImageError(img) {
+    img.onerror = null;
+    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0xNTAgNjBDMTE4IDYwIDkyIDg2IDkyIDExOEM5MiAxMzAgOTggMTQxIDEwOCAxNDhDOTggMTU1IDkyIDE2NiA5MiAxNzhDOTIgMjEwIDExOCAyMzYgMTUwIDIzNkMxODIgMjM2IDIwOCAyMTAgMjA4IDE3OEMyMDggMTY2IDIwMiAxNTUgMTkyIDE0OEMyMDIgMTQxIDIwOCAxMzAgMjA4IDExOEMyMDggODYgMTgyIDYwIDE1MCA2MFoiIGZpbGw9IiNCMDg5NjgiLz4KPHBhdGggZD0iTTE1MCAxMjBDMTYyIDEyMCAxNzIgMTMwIDE3MiAxNDJDMTcyIDE1NCAxNjIgMTY0IDE1MCAxNjRDMTM4IDE2NCAxMjggMTU0IDEyOCAxNDJDMTI4IDEzMCAxMzggMTIwIDE1MCAxMjBaIiBmaWxsPSIjRDE5MTE0Ii8+Cjwvc3ZnPgo=';
+    img.style.border = '2px dashed #b08968';
+    img.style.padding = '10px';
+    img.style.backgroundColor = '#f8f6f2';
+}
+
+// Áp dụng xử lý lỗi ảnh cho tất cả ảnh sản phẩm
+document.addEventListener('DOMContentLoaded', () => {
+    const productImages = document.querySelectorAll('.menu-item img');
+    productImages.forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
     });
 });
 
@@ -112,6 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       btn.classList.toggle('active');
+    });
+  });
+
+  // Gán sự kiện click cho từng sản phẩm để chuyển sang trang chi tiết
+  document.querySelectorAll('.menu-item').forEach((item, idx) => {
+    item.addEventListener('click', function(e) {
+      // Không bắt sự kiện khi click vào nút Order hoặc Fav
+      if (e.target.closest('.btn-order') || e.target.closest('.btn-fav')) return;
+      window.location.href = `detailed-product.html?id=${idx}`;
     });
   });
 });

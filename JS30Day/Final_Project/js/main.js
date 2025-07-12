@@ -2,8 +2,6 @@
 const track = document.getElementById('carouselTrack');
 if (track) {
   let slides = document.querySelectorAll('.carousel-slide');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
   const carousel = document.getElementById('coffeeCarousel');
   const intervalTime = 4000;
   let autoSlide;
@@ -69,7 +67,6 @@ function updateUserInfo() {
   
   if (greetingElement) {
     if (username) {
-      // Lấy tên từ email (phần trước @)
       const displayName = username.split('@')[0];
       greetingElement.textContent = `Xin chào, ${displayName}!`;
     } else {
@@ -80,7 +77,6 @@ function updateUserInfo() {
 
 // === Đăng xuất ===
 document.getElementById("logout-btn").addEventListener("click", function () {
-  // Đồng bộ với key userLoggedIn thay vì loggedInUser
   localStorage.removeItem("userLoggedIn");
   window.location.href = "SignIn.html";
 });

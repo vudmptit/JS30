@@ -1,27 +1,19 @@
 // checkout.js - Xử lý hiển thị đơn hàng và xác nhận thanh toán
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Lấy tên người dùng đã đăng nhập
   const username = localStorage.getItem("userLoggedIn");
   if (!username) {
-    // Lưu thông tin chuyển hướng để sau khi đăng nhập sẽ quay lại trang checkout
     localStorage.setItem("redirectAfterLogin", window.location.href);
     alert("Bạn cần đăng nhập để thanh toán.");
-    window.location.href = "/html/SignIn.html"; // Đảm bảo đúng tên file đăng nhập
+    window.location.href = "/html/SignIn.html";
     return;
   }
 
-  // Lấy giỏ hàng của user từ localStorage
   const cartKey = `cart_${username}`;
   const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
-
-  // Lấy các phần tử giao diện (cần có trong HTML)
   const summary = document.getElementById("checkout-summary");
   const form = document.getElementById("checkout-form");
 
-  // Nếu giỏ hàng trống
   if (!summary || !form) {
-    // Nếu thiếu phần tử HTML, báo lỗi dev
     console.error("Thiếu phần tử #checkout-summary hoặc #checkout-form trong HTML.");
     return;
   }
@@ -59,12 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (paymentSelect) {
     paymentSelect.addEventListener("change", function () {
       const value = this.value;
-      // Ẩn cả hai trước
       const qrBank = document.getElementById("qr-bank");
       const qrMomo = document.getElementById("qr-momo");
       if (qrBank) qrBank.style.display = "none";
       if (qrMomo) qrMomo.style.display = "none";
-      // Hiện đúng cái được chọn
       if (value === "bank" && qrBank) qrBank.style.display = "block";
       else if (value === "momo" && qrMomo) qrMomo.style.display = "block";
     });
@@ -73,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Xử lý submit thanh toán
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    // Lấy thông tin khách hàng
     const name = document.getElementById("fullname")?.value.trim();
     const phone = document.getElementById("phone")?.value.trim();
     const email = document.getElementById("email")?.value.trim();
@@ -94,9 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const history = JSON.parse(localStorage.getItem(historyKey)) || [];
     history.push(order);
     localStorage.setItem(historyKey, JSON.stringify(history));
-    // Xóa giỏ hàng
     localStorage.removeItem(cartKey);
     alert("Thanh toán thành công! Đơn hàng đã được lưu.");
-    window.location.href = "../html/history.html"; // Đảm bảo đúng tên file lịch sử
+    window.location.href = "../html/history.html";
   });
 });
