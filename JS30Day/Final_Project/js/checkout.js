@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!username) {
     localStorage.setItem("redirectAfterLogin", window.location.href);
     alert("Bạn cần đăng nhập để thanh toán.");
-    window.location.href = "/html/SignIn.html";
+    window.location.href = "SignIn.html";
     return;
   }
 
@@ -85,6 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem(historyKey, JSON.stringify(history));
     localStorage.removeItem(cartKey);
     alert("Thanh toán thành công! Đơn hàng đã được lưu.");
-    window.location.href = "../html/history.html";
+    window.location.href = "history.html";
   });
 });

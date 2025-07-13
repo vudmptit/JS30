@@ -75,10 +75,13 @@ function updateUserInfo() {
 }
 
 // === Đăng xuất ===
-document.getElementById("logout-btn").addEventListener("click", function () {
-  localStorage.removeItem("userLoggedIn");
-  window.location.href = "SignIn.html";
-});
+const logoutBtn = document.getElementById("logout-btn");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", function () {
+    localStorage.removeItem("userLoggedIn");
+    window.location.href = "SignIn.html";
+  });
+}
 
 // === Back to Top Button ===
 (function () {
@@ -111,7 +114,6 @@ document.getElementById("logout-btn").addEventListener("click", function () {
   });
 })();
 
-// Cập nhật thông tin người dùng khi trang load
 document.addEventListener('DOMContentLoaded', function() {
   updateUserInfo();
 });

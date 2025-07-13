@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Cập nhật badge khi trang load
   updateCartBadge();
 
   const products = [
@@ -256,11 +255,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     
     if (existingItem) {
-      // Nếu sản phẩm đã tồn tại, tăng số lượng
       existingItem.quantity = (existingItem.quantity || 1) + 1;
       showToast(`Đã tăng số lượng ${product.name} lên ${existingItem.quantity}!`);
     } else {
-      // Nếu sản phẩm chưa có, thêm mới
       cart.push({ 
         name: product.name, 
         price: product.price, 

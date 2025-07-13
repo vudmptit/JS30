@@ -95,18 +95,15 @@ function setupOrderButtons() {
       console.log(" Giá lấy được:", priceText, "→", price);
       const img = itemElem.querySelector('img')?.src || '';
 
-      // Tìm sản phẩm đã tồn tại trong giỏ hàng
       let existingItem = cart.find(item => 
         item.name === name && 
         item.price === price
       );
       
       if (existingItem) {
-        // Nếu sản phẩm đã tồn tại, tăng số lượng
         existingItem.quantity = (existingItem.quantity || 1) + 1;
         showToast(`Đã tăng số lượng ${name} lên ${existingItem.quantity}!`);
       } else {
-        // Nếu sản phẩm chưa có, thêm mới
         cart.push({ name, price, img, quantity: 1 });
         showToast("Đã thêm vào giỏ hàng!");
       }

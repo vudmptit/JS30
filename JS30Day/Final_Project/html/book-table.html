@@ -12,7 +12,7 @@
 <!-- Navbar-->
 <header class="header">
     <nav class="navbar">
-        <a href="../home.html" class="navbar-brand">
+        <a href="home.html" class="navbar-brand">
             <i class="fa-solid fa-mug-hot"></i>
             <h1 class="brand-title">Syntax Cafe</h1>
         </a>
@@ -89,7 +89,8 @@
             </div>
             <div class="form-group">
                 <label for="res-time"><i class="fa-solid fa-clock"></i> Giờ *</label>
-                <input id="res-time" type="time" class="form-control" required>
+                <input id="res-time" type="time" class="form-control" required min="08:00" max="20:00">
+                <small style="color: #6d4c2b; font-size: 0.85rem; margin-top: 4px;">Giờ mở cửa: 8:00 - 20:00</small>
             </div>
             <div class="form-group">
                 <label for="res-guest"><i class="fa-solid fa-users"></i> Số lượng khách *</label>
